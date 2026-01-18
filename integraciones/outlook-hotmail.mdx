@@ -1,0 +1,244 @@
+---
+title: "Outlook/Hotmail"
+description: "Guía paso a paso para configurar Outlook o Hotmail y reenviar facturas automáticamente a FinPilot"
+icon: "microsoft"
+---
+
+## Configurar reenvío automático en Outlook/Hotmail
+
+Esta guía te ayudará a configurar Outlook o Hotmail para reenviar automáticamente las facturas recibidas a FinPilot, permitiendo que el sistema las procese sin intervención manual.
+
+## Prerrequisitos
+
+- Cuenta de Outlook.com o Hotmail.com activa
+- Acceso a la configuración de FinPilot para obtener la dirección de correo de destino
+- Permisos de administrador (si es una cuenta corporativa de Microsoft 365)
+
+## Paso 1: Agregar email destino en FinPilot
+
+Antes de configurar Outlook/Hotmail, necesitas crear una dirección de correo destino en FinPilot donde se recibirán las facturas reenviadas.
+
+<Steps>
+  <Step title="Acceder a FinPilot">
+    Inicia sesión en [FinPilot](https://app.finpilot.ar) con tu cuenta.
+  </Step>
+
+  <Step title="Ir a Integraciones → Email">
+    Navega a la sección de **Integraciones** → **Email** en el menú lateral.
+  </Step>
+
+  <Step title="Agregar nuevo destino">
+    1. Haz clic en el botón **"+ Agregar Destino"** en la esquina superior derecha
+    2. Se abrirá un modal para agregar una nueva dirección de email
+    3. Ingresa el nombre que deseas para tu dirección (por ejemplo: `facturas`, `proveedores`, etc.)
+    4. El sistema creará automáticamente la dirección con el formato: `nombre@inbound.finpilot.ar`
+    5. Haz clic en **"Agregar"** para confirmar
+  </Step>
+
+  <Step title="Copiar la dirección de correo">
+    Una vez creada, copia la dirección de correo electrónico completa (formato: `nombre@inbound.finpilot.ar`). Esta dirección será tu destino para el reenvío automático desde Outlook/Hotmail.
+  </Step>
+</Steps>
+
+<Tip>
+**Consejo**: Puedes crear hasta 5 direcciones de email destino. Guarda esta dirección en un lugar seguro, la necesitarás para configurar el reenvío en Outlook/Hotmail.
+</Tip>
+
+<Note>
+**Nota**: Todas las direcciones de email destino deben usar el dominio `@inbound.finpilot.ar`. Solo se permiten direcciones con este dominio.
+</Note>
+
+## Paso 2: Configurar reenvío en Outlook.com/Hotmail.com
+
+Outlook.com y Hotmail.com comparten la misma plataforma y configuración. Sigue estos pasos para configurar el reenvío automático:
+
+<Steps>
+  <Step title="Abrir configuración de correo">
+    1. Abre [Outlook.com](https://outlook.com) o [Hotmail.com](https://hotmail.com) en tu navegador
+    2. Inicia sesión con tu cuenta
+    3. Haz clic en el ícono de **Configuración** (⚙️) en la esquina superior derecha
+    4. Selecciona **Ver todas las configuraciones de Outlook**
+  </Step>
+
+  <Step title="Ir a Reenvío">
+    1. En el menú de configuración, busca y haz clic en **Correo** → **Reenvío**
+    2. O navega directamente a la sección de **Reenvío** en las opciones de correo
+  </Step>
+
+  <Step title="Habilitar reenvío">
+    1. Activa la opción **Habilitar reenvío**
+    2. Ingresa la dirección de correo de FinPilot que copiaste anteriormente
+    3. Opcionalmente, marca **Mantener una copia de los mensajes reenviados** (recomendado)
+  </Step>
+
+  <Step title="Guardar cambios">
+    1. Haz clic en **Guardar** para aplicar los cambios
+    2. Microsoft puede pedirte que verifiques tu identidad por seguridad
+  </Step>
+</Steps>
+
+<Warning>
+**Importante**: Si estás usando una cuenta corporativa de Microsoft 365, es posible que necesites permisos de administrador para configurar el reenvío. Contacta a tu administrador de TI si no tienes acceso.
+</Warning>
+
+## Paso 3: Confirmar el reenvío (si aplica)
+
+Dependiendo de la configuración de Outlook/Hotmail, es posible que recibas un email de confirmación. Si esto ocurre, sigue estos pasos:
+
+<Steps>
+  <Step title="Revisar emails procesados en FinPilot">
+    1. En FinPilot, ve a la sección **Integraciones** → **Email**
+    2. Verás directamente un listado de **"Emails Procesados"** con todos los emails que han sido procesados
+    3. Busca cualquier email de confirmación relacionado con el reenvío
+  </Step>
+
+  <Step title="Ver detalles y confirmar">
+    1. Si aparece un email de confirmación, haz clic en **"Ver"** para ver los detalles
+    2. Haz clic en **"Ver HTML"** para ver el cuerpo del email
+    3. Busca y haz clic en cualquier link de confirmación si está presente
+  </Step>
+</Steps>
+
+<Note>
+**Nota**: El proceso de confirmación puede variar según la configuración de Outlook/Hotmail. Algunas cuentas pueden requerir confirmación adicional, mientras que otras activan el reenvío automáticamente.
+</Note>
+
+## Paso 4: Verificar la configuración
+
+Una vez configurado el reenvío, es importante verificar que funciona correctamente.
+
+<Steps>
+  <Step title="Enviar correo de prueba">
+    Envía un correo de prueba a tu cuenta de Outlook/Hotmail con un archivo PDF de factura adjunto.
+  </Step>
+
+  <Step title="Verificar en Outlook/Hotmail">
+    1. Verifica que el correo llegó a tu bandeja de entrada
+    2. Si configuraste mantener una copia, verifica que el correo sigue en tu bandeja
+    3. Revisa que el correo fue reenviado (puede tomar unos minutos)
+  </Step>
+
+  <Step title="Verificar en FinPilot">
+    1. Accede a [FinPilot](https://app.finpilot.ar)
+    2. Ve a la sección de **Integraciones** → **Email** para ver los emails procesados
+    3. Verifica que la factura fue procesada automáticamente
+    4. Revisa que los datos extraídos sean correctos
+  </Step>
+</Steps>
+
+<Check>
+**Verificación exitosa**: Si la factura aparece en FinPilot con los datos extraídos correctamente, la configuración está funcionando.
+</Check>
+
+## Paso 5: Configurar reglas de correo (opcional pero recomendado)
+
+Para reenviar solo correos que contengan facturas, puedes configurar reglas de correo en Outlook. Esto evita procesar correos innecesarios.
+
+<Steps>
+  <Step title="Crear una regla">
+    1. En Outlook.com/Hotmail.com, haz clic en el ícono de **Configuración** (⚙️)
+    2. Selecciona **Ver todas las configuraciones de Outlook**
+    3. Ve a **Correo** → **Reglas**
+  </Step>
+
+  <Step title="Agregar nueva regla">
+    1. Haz clic en **Agregar nueva regla**
+    2. Asigna un nombre a la regla, por ejemplo: "Reenviar facturas a FinPilot"
+  </Step>
+
+  <Step title="Configurar condiciones">
+    Configura las condiciones para identificar correos con facturas:
+    - **De**: Ingresa direcciones de proveedores o usa "contiene" con palabras clave
+    - **El asunto contiene**: `factura`, `invoice`, `billing`
+    - **Tiene archivos adjuntos**: Marca esta opción
+    
+    Puedes combinar múltiples condiciones usando "Y" o "O".
+  </Step>
+
+  <Step title="Configurar acciones">
+    1. En la sección de acciones, selecciona **Reenviar el mensaje a**
+    2. Ingresa la dirección de correo de FinPilot
+    3. Opcionalmente, selecciona **Marcar como leído** y **Mover a** (carpeta específica)
+  </Step>
+
+  <Step title="Guardar la regla">
+    1. Revisa la configuración de la regla
+    2. Haz clic en **Guardar** para activar la regla
+  </Step>
+</Steps>
+
+<Tip>
+**Consejo**: Puedes crear múltiples reglas para diferentes proveedores o tipos de facturas. Esto te da mayor control sobre qué correos se procesan automáticamente.
+</Tip>
+
+## Paso 6: Configurar en Outlook Desktop (opcional)
+
+Si usas la aplicación de escritorio de Outlook, también puedes configurar el reenvío desde allí:
+
+<Steps>
+  <Step title="Abrir configuración de Outlook">
+    1. Abre la aplicación Microsoft Outlook
+    2. Ve a **Archivo** → **Configuración de cuenta** → **Configuración de cuenta**
+  </Step>
+
+  <Step title="Configurar reglas">
+    1. Haz clic en la pestaña **Correo electrónico**
+    2. Selecciona tu cuenta y haz clic en **Cambiar**
+    3. O ve a **Archivo** → **Administrar reglas y alertas**
+  </Step>
+
+  <Step title="Crear regla de reenvío">
+    1. Haz clic en **Nueva regla**
+    2. Selecciona **Aplicar regla a los mensajes que recibo**
+    3. Configura las condiciones (remitente, asunto, adjuntos)
+    4. Selecciona la acción **Reenviar a personas o lista de distribución pública**
+    5. Ingresa la dirección de FinPilot
+    6. Guarda la regla
+  </Step>
+</Steps>
+
+## Solución de problemas
+
+### El correo no se reenvía
+
+- **Verifica la dirección de destino**: Asegúrate de que la dirección de FinPilot sea correcta
+- **Revisa las reglas**: Si configuraste reglas, verifica que el correo cumpla con las condiciones
+- **Espera unos minutos**: El reenvío puede tardar algunos minutos en procesarse
+- **Verifica la configuración de reenvío**: Asegúrate de que el reenvío esté habilitado en la configuración
+
+### La factura no se procesa en FinPilot
+
+- **Verifica el formato**: Asegúrate de que el adjunto sea un PDF o imagen válida
+- **Revisa el historial de correos**: En FinPilot, verifica si el correo fue recibido pero no procesado
+- **Contacta soporte**: Si el problema persiste, contacta al equipo de soporte de FinPilot
+
+### Necesito cambiar la dirección de destino
+
+1. Ve a la configuración de reenvío en Outlook.com/Hotmail.com
+2. Desactiva el reenvío actual
+3. Ingresa la nueva dirección de FinPilot
+4. Activa el reenvío nuevamente
+5. Verifica la nueva configuración con un correo de prueba
+
+### Problemas con reglas
+
+- **Las reglas no se aplican**: Verifica que las condiciones sean correctas y que la regla esté activa
+- **Reenvío duplicado**: Si configuraste tanto reenvío general como reglas, puede haber duplicación. Usa solo uno de los métodos
+- **Reglas no funcionan en Outlook Desktop**: Asegúrate de que Outlook Desktop esté sincronizado con tu cuenta en línea
+
+<Note>
+**Nota**: Si cambias la dirección de correo en FinPilot, deberás actualizar la configuración de reenvío en Outlook/Hotmail para usar la nueva dirección.
+</Note>
+
+## Diferencias entre Outlook.com y Hotmail.com
+
+Outlook.com y Hotmail.com son esencialmente el mismo servicio. Las cuentas de Hotmail.com se migraron a Outlook.com, pero puedes seguir usando tu dirección @hotmail.com. La configuración es idéntica para ambos.
+
+## Mejores prácticas
+
+- **Usa reglas**: Configura reglas para reenviar solo correos relevantes
+- **Mantén una copia**: Activa la opción de mantener una copia de los mensajes reenviados para tener un respaldo
+- **Revisa regularmente**: Verifica periódicamente que el reenvío funciona correctamente
+- **Mantén la dirección actualizada**: Si cambias la dirección en FinPilot, actualiza Outlook/Hotmail inmediatamente
+- **Monitorea el procesamiento**: Revisa regularmente las facturas procesadas para asegurar la precisión
+- **Evita duplicación**: No configures tanto reenvío general como reglas para los mismos correos

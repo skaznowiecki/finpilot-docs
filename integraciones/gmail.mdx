@@ -1,0 +1,218 @@
+---
+title: "Gmail"
+description: "Guía paso a paso para configurar Gmail y reenviar facturas automáticamente a FinPilot"
+icon: "google"
+---
+
+## Configurar reenvío automático en Gmail
+
+Esta guía te ayudará a configurar Gmail para reenviar automáticamente las facturas recibidas a FinPilot, permitiendo que el sistema las procese sin intervención manual.
+
+## Prerrequisitos
+
+- Cuenta de Gmail activa
+- Acceso a la configuración de FinPilot para obtener la dirección de correo de destino
+- Permisos de administrador en tu cuenta de Gmail (si es una cuenta corporativa)
+
+## Paso 1: Agregar email destino en FinPilot
+
+Antes de configurar Gmail, necesitas crear una dirección de correo destino en FinPilot donde se recibirán las facturas reenviadas.
+
+<Steps>
+  <Step title="Acceder a FinPilot">
+    Inicia sesión en [FinPilot](https://app.finpilot.ar) con tu cuenta.
+  </Step>
+
+  <Step title="Ir a Integraciones → Email">
+    Navega a la sección de **Integraciones** → **Email** en el menú lateral.
+  </Step>
+
+  <Step title="Agregar nuevo destino">
+    1. Haz clic en el botón **"+ Agregar Destino"** en la esquina superior derecha
+    2. Se abrirá un modal para agregar una nueva dirección de email
+    3. Ingresa el nombre que deseas para tu dirección (por ejemplo: `facturas`, `proveedores`, etc.)
+    4. El sistema creará automáticamente la dirección con el formato: `nombre@inbound.finpilot.ar`
+    5. Haz clic en **"Agregar"** para confirmar
+  </Step>
+
+  <Step title="Copiar la dirección de correo">
+    Una vez creada, copia la dirección de correo electrónico completa (formato: `nombre@inbound.finpilot.ar`). Esta dirección será tu destino para el reenvío automático desde Gmail.
+  </Step>
+</Steps>
+
+<Tip>
+**Consejo**: Puedes crear hasta 5 direcciones de email destino. Guarda esta dirección en un lugar seguro, la necesitarás para configurar el reenvío en Gmail.
+</Tip>
+
+<Note>
+**Nota**: Todas las direcciones de email destino deben usar el dominio `@inbound.finpilot.ar`. Solo se permiten direcciones con este dominio.
+</Note>
+
+## Paso 2: Configurar reenvío en Gmail
+
+Gmail permite configurar el reenvío automático de correos a través de su configuración. Sigue estos pasos:
+
+<Steps>
+  <Step title="Abrir configuración de Gmail">
+    1. Abre [Gmail](https://mail.google.com) en tu navegador
+    2. Haz clic en el ícono de **Configuración** (⚙️) en la esquina superior derecha
+    3. Selecciona **Ver todas las configuraciones**
+  </Step>
+
+  <Step title="Ir a la pestaña Reenvío y POP/IMAP">
+    1. En la parte superior, haz clic en la pestaña **Reenvío y POP/IMAP**
+    2. En la sección "Reenvío", haz clic en **Agregar una dirección de reenvío**
+  </Step>
+
+  <Step title="Agregar dirección de FinPilot">
+    1. Ingresa la dirección de correo de FinPilot que copiaste anteriormente
+    2. Haz clic en **Siguiente**
+    3. Gmail enviará un código de verificación a la dirección de FinPilot
+    4. **Nota**: No necesitas verificar este código manualmente, FinPilot lo manejará automáticamente
+  </Step>
+
+  <Step title="Seleccionar opciones de reenvío">
+    1. Una vez agregada la dirección, selecciona **Reenviar una copia de los correos entrantes a**
+    2. Elige la dirección de FinPilot del menú desplegable
+    3. Selecciona qué hacer con el correo original:
+       - **Mantener el correo de Gmail en la Bandeja de entrada** (recomendado)
+       - **Archivar el correo de Gmail** (si no quieres verlo en tu bandeja)
+       - **Eliminar el correo de Gmail** (no recomendado)
+  </Step>
+
+  <Step title="Guardar cambios">
+    Haz clic en **Guardar cambios** en la parte inferior de la página
+  </Step>
+</Steps>
+
+<Warning>
+**Importante**: Si estás usando una cuenta de Gmail corporativa (Google Workspace), es posible que necesites permisos de administrador para configurar el reenvío. Contacta a tu administrador de TI si no tienes acceso.
+</Warning>
+
+## Paso 3: Confirmar el reenvío en FinPilot
+
+Después de configurar el reenvío en Gmail, recibirás un email de confirmación de Gmail en la dirección de FinPilot. Debes confirmar este reenvío para activarlo.
+
+<Steps>
+  <Step title="Revisar emails procesados en FinPilot">
+    1. En FinPilot, ve a la sección **Integraciones** → **Email**
+    2. Verás directamente un listado de **"Emails Procesados"** con todos los emails que han sido procesados
+    3. Busca el email de confirmación de Gmail (el asunto será algo como "Confirmación de reenvío de Gmail")
+  </Step>
+
+  <Step title="Ver detalles del email">
+    1. En la lista de emails procesados, localiza el email de confirmación de Gmail
+    2. Haz clic en el botón **"Ver"** (ícono de ojo) en la columna de **Acciones**
+    3. Se abrirá un modal con los detalles del email
+  </Step>
+
+  <Step title="Ver el cuerpo del email">
+    1. En el modal de detalles, busca la sección **"Cuerpo del Email"**
+    2. Haz clic en el botón **"Ver HTML"** para ver el contenido completo del email
+    3. Se mostrará el cuerpo del email en formato HTML
+  </Step>
+
+  <Step title="Confirmar el reenvío">
+    1. En el HTML del email, busca el link de confirmación de Gmail
+    2. Haz clic en el link de confirmación para aceptar el reenvío
+    3. Esto abrirá una nueva pestaña o ventana donde Gmail confirmará que el reenvío está activo
+    4. Una vez confirmado, el reenvío automático estará activo
+  </Step>
+</Steps>
+
+<Warning>
+**Importante**: Si no confirmas el reenvío haciendo clic en el link dentro del HTML del email, Gmail no activará el reenvío automático y las facturas no serán procesadas.
+</Warning>
+
+<Tip>
+**Consejo**: El email de confirmación puede tardar unos minutos en aparecer en FinPilot. Si no lo ves inmediatamente, espera unos minutos y recarga la página haciendo clic en el botón **"Recargar"**.
+</Tip>
+
+## Paso 4: Verificar la configuración
+
+Una vez confirmado el reenvío, es importante verificar que funciona correctamente.
+
+<Steps>
+  <Step title="Enviar correo de prueba">
+    Envía un correo de prueba a tu cuenta de Gmail con un archivo PDF de factura adjunto.
+  </Step>
+
+  <Step title="Verificar en Gmail">
+    1. Verifica que el correo llegó a tu bandeja de entrada de Gmail
+    2. Revisa que el correo fue reenviado (puede tomar unos minutos)
+  </Step>
+
+  <Step title="Verificar en FinPilot">
+    1. Accede a [FinPilot](https://app.finpilot.ar)
+    2. Ve a la sección de **Integraciones** → **Email** para ver los emails procesados
+    3. Verifica que la factura fue procesada automáticamente
+    4. Revisa que los datos extraídos sean correctos
+  </Step>
+</Steps>
+
+<Check>
+**Verificación exitosa**: Si la factura aparece en FinPilot con los datos extraídos correctamente, la configuración está funcionando.
+</Check>
+
+## Paso 5: Configurar filtros (opcional pero recomendado)
+
+Para reenviar solo correos que contengan facturas, puedes configurar filtros en Gmail. Esto evita procesar correos innecesarios.
+
+<Steps>
+  <Step title="Crear un filtro">
+    1. En Gmail, haz clic en el ícono de búsqueda avanzada (🔍) en la barra de búsqueda
+    2. O haz clic en **Mostrar opciones de búsqueda** (tres puntos verticales)
+  </Step>
+
+  <Step title="Configurar criterios del filtro">
+    Configura el filtro para identificar correos con facturas:
+    - **De**: Ingresa direcciones de proveedores comunes (ej: `facturas@`, `billing@`, etc.)
+    - **Tiene los archivos adjuntos**: Marca esta opción
+    - **Incluye las palabras**: `factura`, `invoice`, `pdf`
+    
+    O usa una combinación de estos criterios según tus necesidades.
+  </Step>
+
+  <Step title="Aplicar acciones al filtro">
+    1. Haz clic en **Crear filtro**
+    2. Marca la opción **Reenviarlo a** y selecciona la dirección de FinPilot
+    3. Opcionalmente, marca **Marcarlo como leído** y **Archivarlo** para mantener tu bandeja limpia
+    4. Haz clic en **Crear filtro**
+  </Step>
+</Steps>
+
+<Tip>
+**Consejo**: Puedes crear múltiples filtros para diferentes proveedores o tipos de facturas. Esto te da mayor control sobre qué correos se procesan automáticamente.
+</Tip>
+
+## Solución de problemas
+
+### El correo no se reenvía
+
+- **Verifica la dirección de destino**: Asegúrate de que la dirección de FinPilot sea correcta
+- **Revisa los filtros**: Si configuraste filtros, verifica que el correo cumpla con los criterios
+- **Espera unos minutos**: El reenvío puede tardar algunos minutos en procesarse
+
+### La factura no se procesa en FinPilot
+
+- **Verifica el formato**: Asegúrate de que el adjunto sea un PDF o imagen válida
+- **Revisa el historial de correos**: En FinPilot, verifica si el correo fue recibido pero no procesado
+- **Contacta soporte**: Si el problema persiste, contacta al equipo de soporte de FinPilot
+
+### Necesito cambiar la dirección de destino
+
+1. Ve a la configuración de reenvío en Gmail
+2. Elimina la dirección antigua
+3. Agrega la nueva dirección de FinPilot
+4. Verifica la nueva configuración con un correo de prueba
+
+<Note>
+**Nota**: Si cambias la dirección de correo en FinPilot, deberás actualizar la configuración de reenvío en Gmail para usar la nueva dirección.
+</Note>
+
+## Mejores prácticas
+
+- **Usa filtros**: Configura filtros para reenviar solo correos relevantes
+- **Revisa regularmente**: Verifica periódicamente que el reenvío funciona correctamente
+- **Mantén la dirección actualizada**: Si cambias la dirección en FinPilot, actualiza Gmail inmediatamente
+- **Monitorea el procesamiento**: Revisa regularmente las facturas procesadas para asegurar la precisión
