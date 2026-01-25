@@ -1,0 +1,179 @@
+---
+title: "Gestión de Roles"
+description: "Administra roles del sistema y crea roles personalizados con permisos específicos"
+icon: "shield"
+---
+
+## Gestión de Roles
+
+Los roles en FinPilot te permiten agrupar permisos y asignarlos a usuarios de forma eficiente. Cada rol define qué acciones puede realizar un usuario en la plataforma.
+
+## ¿Qué son los roles?
+
+Un rol es una colección de permisos que define qué puede hacer un usuario en FinPilot. En lugar de asignar permisos individuales a cada usuario, puedes crear roles con conjuntos de permisos y asignar esos roles a los usuarios.
+
+**Ventajas de usar roles:**
+
+- **Simplifica la gestión**: Asigna un rol en lugar de múltiples permisos individuales
+- **Consistencia**: Todos los usuarios con el mismo rol tienen los mismos permisos
+- **Flexibilidad**: Puedes crear roles personalizados para necesidades específicas
+- **Mantenimiento**: Actualiza un rol y todos los usuarios con ese rol se actualizan automáticamente
+
+## Vista general de roles
+
+La vista principal de roles muestra todos los roles disponibles en tu empresa, incluyendo los roles del sistema y los roles personalizados que hayas creado.
+
+Accede a la sección de roles en: [https://app.finpilot.ar/roles](https://app.finpilot.ar/roles)
+
+![Lista de roles en FinPilot](/images/users/roles.png)
+
+## Roles del Sistema
+
+FinPilot incluye tres roles predefinidos que cubren la mayoría de casos de uso comunes:
+
+### Rol Admin
+
+El rol **admin** proporciona acceso completo a todos los recursos y funcionalidades de FinPilot.
+
+**Características:**
+- Acceso completo a todos los recursos
+- Gestión de usuarios (crear, editar, eliminar)
+- Gestión de roles y permisos
+- Acceso a todas las configuraciones
+- **33 permisos** en total
+
+**Cuándo usar:**
+- Administradores principales de la empresa
+- Usuarios que necesitan acceso completo al sistema
+- Responsables de la configuración y gestión del sistema
+
+### Rol Read
+
+El rol **read** proporciona acceso de solo lectura a todos los recursos.
+
+**Características:**
+- Ver facturas, proveedores, y todos los recursos
+- No puede crear, editar o eliminar información
+- Acceso de consulta y reportes
+- **10 permisos** en total
+
+**Cuándo usar:**
+- Usuarios que solo necesitan consultar información
+- Personal de auditoría o contabilidad que revisa datos
+- Usuarios que generan reportes pero no modifican datos
+
+### Rol Write
+
+El rol **write** proporciona acceso de lectura y escritura a todos los recursos excepto la gestión de usuarios.
+
+**Características:**
+- Crear, editar y eliminar facturas
+- Gestionar proveedores y empleados
+- Acceso a configuraciones generales
+- No puede gestionar usuarios, roles o permisos
+- **26 permisos** en total
+
+**Cuándo usar:**
+- Equipo que gestiona facturas diariamente
+- Personal de contabilidad que procesa facturas
+- Usuarios que necesitan modificar datos pero no gestionar usuarios
+
+## Comparación de roles del sistema
+
+| Rol | Permisos | Gestión de Usuarios | Crear/Editar Facturas | Ver Datos |
+|-----|----------|---------------------|----------------------|-----------|
+| **admin** | 33 | Sí | Sí | Sí |
+| **write** | 26 | No | Sí | Sí |
+| **read** | 10 | No | No | Sí |
+
+## Crear un rol personalizado
+
+Si los roles del sistema no cubren tus necesidades específicas, puedes crear roles personalizados con combinaciones exactas de permisos.
+
+<Steps>
+  <Step title="Acceder a la sección de roles">
+    Navega a la sección de **Roles** en el menú lateral de FinPilot o accede directamente a [https://app.finpilot.ar/roles](https://app.finpilot.ar/roles).
+  </Step>
+
+  <Step title="Abrir el formulario de creación">
+    Haz clic en el botón **"+ Crear Rol"** o **"+ Nuevo Rol"** en la esquina superior derecha.
+  </Step>
+
+  <Step title="Definir información básica">
+    Completa la información básica del rol:
+    - **Nombre**: Un nombre descriptivo para el rol (ej: "Contador", "Aprobador de Facturas")
+    - **Descripción**: Una descripción opcional que explique el propósito del rol
+  </Step>
+
+  <Step title="Seleccionar permisos">
+    En la sección de permisos, selecciona los permisos que deseas incluir en este rol. Los permisos están organizados por categorías:
+    - Permisos de facturas
+    - Permisos de proveedores
+    - Permisos de configuración
+    - Permisos de usuarios (solo para roles con acceso administrativo)
+    - Y más...
+  </Step>
+
+  <Step title="Revisar y guardar">
+    Revisa los permisos seleccionados y haz clic en **"Crear"** o **"Guardar"** para crear el rol.
+  </Step>
+</Steps>
+
+![Formulario de crear rol personalizado](/images/users/create-role.png)
+
+<Tip>
+**Consejo**: Comienza con los roles del sistema. Solo crea roles personalizados cuando tengas necesidades específicas que los roles predefinidos no cubran.
+</Tip>
+
+<Note>
+**Nota**: Los roles personalizados se crean a nivel de empresa, por lo que estarán disponibles para todos los usuarios de tu empresa una vez creados.
+</Note>
+
+## Asignar un rol a un usuario
+
+Para asignar un rol a un usuario:
+
+<Steps>
+  <Step title="Acceder a la gestión de usuarios">
+    Navega a la sección de **Usuarios** en el menú lateral o accede directamente a [https://app.finpilot.ar/users](https://app.finpilot.ar/users).
+  </Step>
+
+  <Step title="Editar el usuario">
+    Encuentra el usuario al que deseas asignar el rol y haz clic en el botón de edición o en el nombre del usuario.
+  </Step>
+
+  <Step title="Seleccionar el rol">
+    En el formulario de edición, busca el campo **"Rol"** o **"Rol Asignado"**.
+    Selecciona el rol deseado del menú desplegable.
+  </Step>
+
+  <Step title="Guardar los cambios">
+    Haz clic en **"Guardar"** o **"Actualizar"** para aplicar el cambio de rol.
+  </Step>
+</Steps>
+
+<Note>
+**Nota**: Cuando cambias el rol de un usuario, los permisos se actualizan inmediatamente. El usuario verá los cambios la próxima vez que recargue la página o inicie sesión.
+</Note>
+
+## Ejemplo de configuración
+
+Para un equipo pequeño con pocos usuarios:
+
+- **1 usuario con rol admin**: El administrador principal
+- **2-3 usuarios con rol write**: El equipo que gestiona facturas diariamente
+
+Esta configuración es simple y cubre las necesidades básicas.
+
+## Roles personalizados
+
+Actualmente puedes crear roles personalizados según las necesidades de tu organización. Los roles personalizados te permiten:
+
+- Combinar permisos de diferentes categorías
+- Crear roles específicos para departamentos o funciones
+- Definir exactamente qué puede hacer cada tipo de usuario
+
+<Note>
+**Nota**: Si actualmente no tienes roles personalizados creados, verás un mensaje indicando "No hay roles personalizados" en la lista de roles. Puedes comenzar a crear roles personalizados cuando los necesites.
+</Note>
+

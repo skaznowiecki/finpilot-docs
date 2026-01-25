@@ -40,6 +40,15 @@
                 ]
               }
             ]
+          },
+          {
+            "group": "Usuarios y Permisos",
+            "pages": [
+              "usuarios-roles/usuarios-roles",
+              "usuarios-roles/usuarios",
+              "usuarios-roles/roles",
+              "usuarios-roles/permisos"
+            ]
           }
         ]
       }

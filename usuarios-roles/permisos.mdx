@@ -1,0 +1,72 @@
+---
+title: "Sistema de Permisos"
+description: "Entiende cómo funcionan los permisos y cómo controlan el acceso a las funcionalidades"
+icon: "key"
+---
+
+## Sistema de Permisos
+
+El sistema de permisos de FinPilot controla de forma granular qué acciones puede realizar cada usuario en la plataforma. Los permisos se agrupan en roles, que luego se asignan a los usuarios.
+
+## ¿Qué son los permisos?
+
+Un permiso es una autorización específica para realizar una acción en FinPilot. Cada permiso controla el acceso a una funcionalidad o acción particular, como:
+
+- Crear facturas
+- Ver facturas
+- Editar facturas
+- Eliminar facturas
+- Gestionar usuarios
+- Acceder a configuraciones
+
+Los permisos son **granulares**, lo que significa que puedes controlar acciones muy específicas. Por ejemplo, puedes permitir que un usuario vea facturas pero no las edite, o que pueda crear facturas pero no eliminarlas.
+
+## Vista de permisos en el sistema
+
+En FinPilot, los permisos se organizan visualmente en categorías que puedes expandir para ver los permisos granulares. Cada permiso tiene un identificador único (como `invoice:create`) y una descripción clara de la acción que permite realizar.
+
+![Vista de permisos asignados al rol Admin](/images/users/permissions.png)
+
+## Cómo funcionan los permisos
+
+Los permisos no se asignan directamente a los usuarios. En su lugar, se agrupan en roles que luego se asignan a usuarios. Los permisos controlan tanto lo que los usuarios pueden ver como lo que pueden hacer: los botones, menús y acciones disponibles se adaptan automáticamente según los permisos del usuario.
+
+<Note>
+**Nota**: Si un usuario no tiene un permiso específico, los elementos relacionados no aparecerán en la interfaz o estarán deshabilitados.
+</Note>
+
+## Ejemplos de permisos comunes
+
+### Permisos de solo lectura
+
+Un usuario con permisos de solo lectura puede ver información pero no puede crear, editar o eliminar nada. Típicamente incluye permisos para ver facturas, proveedores, empleados, dashboard y reportes.
+
+### Permisos de gestión completa
+
+Un usuario que gestiona facturas típicamente tiene permisos para crear, editar, eliminar, aprobar y rechazar facturas, además de gestionar proveedores. Sin embargo, no puede gestionar usuarios o configuraciones críticas del sistema.
+
+## Cómo los permisos controlan la UI
+
+El sistema adapta automáticamente la interfaz según los permisos del usuario. Los botones, menús y acciones disponibles solo aparecen si el usuario tiene los permisos correspondientes. Si un usuario intenta realizar una acción sin permiso, se mostrará un mensaje de error.
+
+## Permisos por rol del sistema
+
+### Rol Admin (33 permisos)
+
+Incluye todos los permisos disponibles del sistema. Acceso completo a todas las funcionalidades.
+
+### Rol Write (26 permisos)
+
+Incluye permisos de lectura y escritura para todos los recursos, excepto gestión de usuarios y roles.
+
+### Rol Read (10 permisos)
+
+Incluye solo permisos de lectura. No permite crear, editar o eliminar información.
+
+## Mejores prácticas
+
+Asigna solo los permisos necesarios para que los usuarios realicen su trabajo. Comienza con los roles del sistema (admin, read, write) y solo crea roles personalizados cuando tengas necesidades específicas.
+
+<Tip>
+**Consejo**: Revisa periódicamente los permisos asignados para asegurarte de que siguen siendo apropiados.
+</Tip>
