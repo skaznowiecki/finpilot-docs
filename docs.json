@@ -15,7 +15,7 @@
     "default": "dark",
     "isHidden": false
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
   "navigation": {
     "groups": [
       {
