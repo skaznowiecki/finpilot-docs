@@ -1,0 +1,139 @@
+---
+title: "Visualizar / Editar"
+icon: "eye"
+---
+
+Para visualizar o editar una factura, haz clic sobre cualquier factura en el [listado de facturas](https://app.finpilot.ar/invoices). Esto te llevará a la vista detallada de la factura.
+
+<Frame>
+  <img src="/images/facturas/show.png" alt="Vista detallada de una factura" />
+</Frame>
+
+## Acciones disponibles
+
+En la vista de la factura, tienes acceso a las siguientes acciones en la esquina superior derecha:
+
+<CardGroup cols={3}>
+  <Card title="Editar" icon="pen-to-square">
+    Modifica la información de la factura.
+  </Card>
+
+  <Card title="Descargar" icon="download">
+    Descarga el archivo original de la factura.
+  </Card>
+
+  <Card title="Eliminar" icon="trash">
+    Elimina la factura del sistema.
+  </Card>
+</CardGroup>
+
+### ¿Qué puedo editar?
+
+Al hacer clic en **Editar**, puedes modificar:
+
+- **Estado de la factura** - Cambia el estado según el flujo de aprobación
+- **Fecha de pago** - Define cuándo se pagará la factura (se refleja en el dashboard)
+- **Montos** - Ajusta subtotal, impuestos y total si es necesario
+- **Información general** - Número de factura, fechas, tipo, etc.
+
+<Tip>
+La fecha de pago es importante para el seguimiento en el dashboard, donde podrás ver las facturas próximas a vencer y planificar tus pagos.
+</Tip>
+
+---
+
+## Pestañas de la factura
+
+La vista de la factura se organiza en cuatro pestañas:
+
+### Detalles
+
+Muestra toda la información extraída de la factura: número, tipo, fechas, proveedor, montos y líneas de detalle.
+
+### Documentos
+
+Adjunta información relevante relacionada con la factura. Esto es especialmente útil cuando necesitas respaldar una factura con documentación adicional.
+
+<Frame>
+  <img src="/images/facturas/documents.png" alt="Documentos adjuntos a una factura" />
+</Frame>
+
+Puedes adjuntar tres tipos de contenido:
+
+<CardGroup cols={3}>
+  <Card title="Archivos" icon="file">
+    Sube archivos de cualquier tipo: PDFs, imágenes, documentos de Office, etc.
+  </Card>
+
+  <Card title="Notas de texto" icon="note-sticky">
+    Agrega notas escritas con información relevante sobre la factura.
+  </Card>
+
+  <Card title="Links" icon="link">
+    Guarda enlaces a recursos externos relacionados.
+  </Card>
+</CardGroup>
+
+<Info>
+Ejemplos de documentos que puedes adjuntar: órdenes de compra, remitos, contratos, presupuestos, o cualquier documento que respalde la factura.
+</Info>
+
+### Comentarios
+
+<Warning>
+La funcionalidad de **Comentarios** requiere tener activa la integración del **Portal**. Contacta a [soporte@finpilot.ar](mailto:soporte@finpilot.ar) para solicitar su habilitación.
+</Warning>
+
+<Frame>
+  <img src="/images/facturas/comments.png" alt="Sistema de comentarios de una factura" />
+</Frame>
+
+Cuando tienes la integración del Portal activa, los comentarios se convierten en el **canal de comunicación entre tu equipo y los proveedores**.
+
+**¿Para qué sirve?**
+
+- Dejar comentarios al proveedor sobre la factura
+- Recibir respuestas y aclaraciones del proveedor
+- Adjuntar archivos en los comentarios
+
+**Casos de uso comunes:**
+
+<CardGroup cols={2}>
+  <Card title="Comprobantes de pago" icon="receipt">
+    Adjunta el comprobante de transferencia o pago realizado.
+  </Card>
+
+  <Card title="Liquidaciones" icon="file-invoice-dollar">
+    Comparte liquidaciones o detalles de pago con el proveedor.
+  </Card>
+
+  <Card title="Solicitud de correcciones" icon="message">
+    Pide al proveedor que corrija o envíe una nueva factura.
+  </Card>
+
+  <Card title="Aclaraciones" icon="circle-question">
+    Solicita información adicional sobre conceptos facturados.
+  </Card>
+</CardGroup>
+
+### Historial
+
+El historial mantiene un registro completo de **todos los cambios realizados en la factura** y quién los hizo.
+
+<Frame>
+  <img src="/images/facturas/history.png" alt="Historial de cambios de una factura" />
+</Frame>
+
+**¿Qué se registra?**
+
+- Creación de la factura
+- Cambios de estado
+- Modificaciones de datos
+- Documentos agregados
+- Comentarios realizados
+- Usuario que realizó cada acción
+- Fecha y hora de cada cambio
+
+<Note>
+El historial proporciona **trazabilidad completa** para auditorías y seguimiento interno. Puedes filtrar por tipo de acción y por fuente del cambio.
+</Note>

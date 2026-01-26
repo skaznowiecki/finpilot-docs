@@ -1,0 +1,135 @@
+---
+title: "Etiquetas"
+icon: "tags"
+---
+
+Las etiquetas te permiten **organizar y clasificar** a tus proveedores basándote en una lógica específica para tu negocio.
+
+**Ejemplos de uso:**
+- Agrupar proveedores por **unidad de negocio** (Tecnología, Marketing, Operaciones)
+- Clasificar por **tipo de servicio** (Consultoría, Software, Logística)
+- Organizar por **política de pago** (Pago inmediato, 30 días, 60 días)
+- Identificar **proveedores estratégicos** o prioritarios
+
+---
+
+## Funcionalidades principales
+
+Las etiquetas de proveedores tienen dos funcionalidades clave:
+
+<CardGroup cols={2}>
+  <Card title="Filtrar proveedores y facturas" icon="filter">
+    Visualiza todas las facturas de un grupo específico de proveedores filtrando por sus etiquetas.
+  </Card>
+
+  <Card title="Políticas de pago grupales" icon="calendar-check">
+    Asigna una política de días de pago a todos los proveedores que compartan una etiqueta.
+  </Card>
+</CardGroup>
+
+<Info>
+Para entender cómo funcionan las políticas de pago y sus prioridades, consulta la sección [Fecha de Pago](/facturas/fecha-pago).
+</Info>
+
+---
+
+## Crear una etiqueta
+
+<Card
+  title="Acceder a Etiquetas"
+  icon="arrow-up-right-from-square"
+  href="https://app.finpilot.ar/tags"
+>
+  Administra las etiquetas de proveedores.
+</Card>
+
+<Steps>
+  <Step title="Ir a la sección de etiquetas">
+    Accede a [Etiquetas](https://app.finpilot.ar/tags).
+  </Step>
+
+  <Step title="Crear nueva etiqueta">
+    Haz clic en el botón **Nueva Etiqueta**.
+  </Step>
+
+  <Step title="Configurar la etiqueta">
+    Completa los datos:
+    - **Nombre** (requerido)
+    - **Color** para identificarla visualmente
+    - **Política de Días de Pago** (opcional) - días para calcular la fecha de pago de las facturas
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/proveedor/nueva-etiqueta.png" alt="Modal para crear una nueva etiqueta de proveedor" />
+</Frame>
+
+<Tip>
+La **Política de Días de Pago** es opcional. Si la configuras, todas las facturas de proveedores con esta etiqueta usarán estos días para calcular su fecha de pago (a menos que el proveedor o la factura tengan una configuración específica).
+</Tip>
+
+---
+
+## Asignar etiquetas a proveedores
+
+Para asignar una etiqueta a un proveedor desde el [listado de proveedores](https://app.finpilot.ar/parties):
+
+<Steps>
+  <Step title="Localizar la columna Etiquetas">
+    En el listado, busca la columna **Etiquetas** del proveedor que deseas etiquetar.
+  </Step>
+
+  <Step title="Abrir el selector">
+    Haz clic en la columna de etiquetas para abrir el selector.
+  </Step>
+
+  <Step title="Seleccionar etiquetas">
+    Elige las etiquetas que deseas asignar al proveedor.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/proveedor/asignar-tag-proveedor.png" alt="Asignar etiqueta a un proveedor desde el listado" />
+</Frame>
+
+<Note>
+Puedes asignar **múltiples etiquetas** a un mismo proveedor si es necesario.
+</Note>
+
+---
+
+## Filtrar facturas por etiquetas de proveedores
+
+Una de las ventajas más útiles es poder **filtrar el listado de facturas** usando las etiquetas de los proveedores.
+
+En el [listado de facturas](https://app.finpilot.ar/invoices), al abrir el filtro de **Etiquetas**, verás dos grupos:
+
+- **Proveedor**: Etiquetas asignadas a proveedores
+- **Factura**: Etiquetas asignadas directamente a facturas
+
+<Frame>
+  <img src="/images/proveedor/filtro-etiqueta-proveedor-en-facturas.png" alt="Filtrar facturas por etiquetas de proveedores" />
+</Frame>
+
+<Tip>
+Esto te permite, por ejemplo, ver todas las facturas de proveedores etiquetados como "Servicios Críticos" sin importar si las facturas individuales tienen etiquetas propias.
+</Tip>
+
+---
+
+## Diferencia con etiquetas de facturas
+
+| Característica | Etiquetas de Proveedores | Etiquetas de Facturas |
+|----------------|--------------------------|----------------------|
+| **Se asignan a** | Proveedores | Facturas individuales |
+| **Política de pago** | Sí, permite configurar días | No |
+| **Aplica a facturas** | Todas las facturas del proveedor | Solo la factura etiquetada |
+| **Caso de uso** | Clasificar grupos de proveedores | Marcar facturas específicas |
+
+<Card
+  title="Etiquetas de facturas"
+  icon="file-invoice"
+  href="/facturas/etiquetas"
+>
+  Aprende a usar etiquetas para organizar facturas individuales.
+</Card>

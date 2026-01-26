@@ -1,0 +1,106 @@
+---
+title: "Exportar"
+icon: "download"
+---
+
+FinPilot te permite exportar tus facturas a un archivo **XLSX (Excel)** con toda la información disponible. La exportación incluye todos los campos de la factura más todos los campos cargados del proveedor asociado.
+
+<Info>
+A medida que completes más información en tus proveedores (datos bancarios, contacto, etc.), estos campos adicionales se incluirán automáticamente en la exportación de facturas.
+</Info>
+
+<Card
+  title="Acceder al listado de facturas"
+  icon="arrow-up-right-from-square"
+  href="https://app.finpilot.ar/invoices"
+>
+  La exportación siempre se realiza desde el listado de facturas.
+</Card>
+
+## Formas de exportar
+
+Existen dos maneras de exportar facturas según tus necesidades:
+
+<Tabs>
+  <Tab title="Selección manual">
+    ### Exportar facturas seleccionadas
+
+    Este método te permite elegir exactamente qué facturas quieres exportar:
+
+    <Steps>
+      <Step title="Seleccionar facturas">
+        En el listado de facturas, marca las casillas de las facturas que deseas exportar.
+      </Step>
+
+      <Step title="Abrir menú de acciones">
+        Una vez seleccionadas, aparecerá un botón **Acciones** en la esquina superior derecha indicando el número de facturas seleccionadas.
+      </Step>
+
+      <Step title="Exportar">
+        Haz clic en el botón y selecciona **Exportar seleccionadas** del menú desplegable.
+      </Step>
+    </Steps>
+
+    <Frame>
+      <img src="/images/facturas/export-manualmente.png" alt="Exportar facturas seleccionadas manualmente" />
+    </Frame>
+
+    <Tip>
+    Este método es ideal cuando necesitas exportar facturas específicas que no comparten un criterio común de filtrado.
+    </Tip>
+  </Tab>
+
+  <Tab title="Basado en filtros">
+    ### Exportar facturas filtradas
+
+    Este método te permite exportar todas las facturas que cumplan con ciertos criterios:
+
+    <Steps>
+      <Step title="Aplicar filtros">
+        Utiliza los filtros disponibles para mostrar solo las facturas que deseas exportar. Por ejemplo: facturas pre-aprobadas, de un proveedor específico, de un rango de fechas, etc.
+      </Step>
+
+      <Step title="Exportar">
+        Una vez aplicados los filtros, haz clic en el botón **Exportar** ubicado en la esquina superior derecha.
+      </Step>
+    </Steps>
+
+    <Frame>
+      <img src="/images/facturas/export-automatically.png" alt="Exportar facturas basado en filtros" />
+    </Frame>
+
+    <Tip>
+    Este método es ideal para exportaciones recurrentes o cuando necesitas todas las facturas que cumplen ciertos criterios (por ejemplo, todas las facturas aprobadas del mes).
+    </Tip>
+  </Tab>
+</Tabs>
+
+## Contenido del archivo exportado
+
+El archivo XLSX incluye toda la información disponible:
+
+<CardGroup cols={2}>
+  <Card title="Datos de la factura" icon="file-invoice">
+    - Número de factura
+    - Tipo de factura
+    - Fecha de emisión
+    - Fecha de vencimiento
+    - Fecha de pago
+    - Subtotal, impuestos y total
+    - Estado
+    - Etiquetas
+  </Card>
+
+  <Card title="Datos del proveedor" icon="building">
+    - Nombre o razón social
+    - CUIT/CUIL
+    - Información de contacto
+    - Datos bancarios
+    - Etiquetas del proveedor
+    - Campos personalizados
+  </Card>
+</CardGroup>
+
+<Note>
+El archivo se descarga automáticamente en tu navegador una vez generado. El nombre del archivo incluye la fecha de exportación para facilitar su identificación.
+</Note>

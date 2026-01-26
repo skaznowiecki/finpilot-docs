@@ -1,7 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "FinPilot",
+  "name": "Documentación",
+  "logo": {
+    "light": "/logo/dark.svg",
+    "dark": "/logo/light.svg"
+  },
   "colors": {
     "primary": "#6B7280",
     "light": "#9CA3AF",
@@ -13,55 +17,65 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guías",
-        "groups": [
+        "group": "Empezar",
+        "pages": [
+          "empezar/guia-inicio",
+          "empezar/conceptos"
+        ]
+      },
+      {
+        "group": "Facturas",
+        "pages": [
+          "facturas/visualizar-editar",
+          "facturas/exportar",
+          "facturas/importar",
+          "facturas/cambiar-estado",
+          "facturas/fecha-pago",
+          "facturas/etiquetas"
+        ]
+      },
+      {
+        "group": "Proveedores",
+        "pages": [
+          "proveedores/crear-editar",
+          "proveedores/exportar",
+          "proveedores/etiquetas"
+        ]
+      },
+      {
+        "group": "Integraciones",
+        "pages": [
           {
-            "group": "Introducción",
+            "group": "Email",
+            "icon": "envelope",
             "pages": [
-              "index"
-            ]
-          },
-          {
-            "group": "Integraciones",
-            "pages": [
-              {
-                "group": "Email",
-                "pages": [
-                  "integraciones/email",
-                  {
-                    "group": "Configurar redirección",
-                    "pages": [
-                      "integraciones/gmail",
-                      "integraciones/outlook-hotmail"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Usuarios y Permisos",
-            "pages": [
-              "usuarios-roles/usuarios-roles",
-              "usuarios-roles/usuarios",
-              "usuarios-roles/roles",
-              "usuarios-roles/permisos"
+              "integraciones/email",
+              "integraciones/gmail",
+              "integraciones/outlook-hotmail"
             ]
           }
         ]
+      },
+      {
+        "group": "Administración",
+        "pages": [
+          "administracion/empresa",
+          "administracion/organizaciones",
+          "administracion/usuarios-roles"
+        ]
       }
-    ],
-    "global": {
-      "anchors": []
-    }
+    ]
+  },
+  "global": {
+    "anchors": []
   },
   "navbar": {
     "links": [],
     "primary": {
       "type": "button",
-      "label": "Acceder a FinPilot",
+      "label": "Ir a la aplicación",
       "href": "https://app.finpilot.ar"
     }
   },

@@ -1,0 +1,152 @@
+---
+title: "Importar"
+icon: "upload"
+---
+
+La importación de facturas es el proceso principal para ingresar tus facturas al sistema. FinPilot utiliza inteligencia artificial para extraer automáticamente toda la información relevante de tus documentos.
+
+<Card
+  title="Acceder a Importar Facturas"
+  icon="arrow-up-right-from-square"
+  href="https://app.finpilot.ar/invoices/import"
+>
+  Ingresa directamente al módulo de importación de facturas.
+</Card>
+
+## ¿Cómo funciona?
+
+<Frame>
+  <img src="/images/facturas/import.png" alt="Pantalla de importación de facturas en FinPilot" />
+</Frame>
+
+Para importar facturas, tienes dos opciones:
+
+<CardGroup cols={2}>
+  <Card title="Arrastrar y soltar" icon="hand">
+    Arrastra tus archivos de factura directamente a la zona de carga indicada.
+  </Card>
+
+  <Card title="Seleccionar archivos" icon="folder-open">
+    Haz clic en **Seleccionar Archivos** para elegir las facturas desde tu computadora.
+  </Card>
+</CardGroup>
+
+### Formatos soportados
+
+Puedes importar facturas en los siguientes formatos:
+
+- **PDF** - Facturas en formato PDF
+- **JPG** - Imágenes en formato JPEG
+- **PNG** - Imágenes en formato PNG
+
+<Tip>
+Para mejores resultados, asegúrate de que las imágenes sean claras y legibles. Esto permite que la IA extraiga la información con mayor precisión.
+</Tip>
+
+## Proceso de extracción automática
+
+Una vez que subes tus facturas, FinPilot realiza el siguiente proceso automáticamente:
+
+<Steps>
+  <Step title="Análisis con IA">
+    El sistema analiza cada documento utilizando inteligencia artificial para identificar y extraer la información relevante:
+    - Número de factura
+    - Fecha de emisión y vencimiento
+    - Datos del proveedor (nombre, CUIT)
+    - Importes (subtotal, impuestos, total)
+    - Líneas de detalle
+  </Step>
+
+  <Step title="Validación de datos">
+    FinPilot valida automáticamente la información extraída para asegurar su integridad y detectar posibles errores o inconsistencias.
+  </Step>
+
+  <Step title="Gestión de proveedores">
+    El sistema busca si el proveedor de la factura ya existe en tu base de datos:
+
+    - **Si el proveedor existe**: La factura se asigna automáticamente al proveedor correspondiente.
+    - **Si el proveedor no existe**: FinPilot crea un nuevo proveedor con la información extraída de la factura.
+  </Step>
+
+  <Step title="Creación de la factura">
+    La factura se crea en el sistema con toda la información extraída, lista para su revisión y gestión.
+  </Step>
+</Steps>
+
+<Info>
+Puedes importar **múltiples facturas a la vez**. El sistema procesará cada una de forma independiente y te mostrará el resultado de cada importación.
+</Info>
+
+## Detección de facturas duplicadas
+
+FinPilot detecta automáticamente cuando intentas importar una factura que ya existe en el sistema. Esto evita que tengas registros duplicados y mantiene tu información organizada.
+
+### ¿Qué sucede con las facturas duplicadas?
+
+Cuando el sistema detecta una factura duplicada:
+
+1. **Se marca automáticamente** con el estado "Duplicado"
+2. **No se procesa nuevamente** - los datos originales se mantienen intactos
+3. **Queda disponible para revisión** en un apartado especial
+
+### ¿Cómo ver las facturas duplicadas?
+
+Para acceder a las facturas marcadas como duplicadas:
+
+<Steps>
+  <Step title="Ir a Facturas">
+    Accede a la [lista de facturas](https://app.finpilot.ar/invoices) en FinPilot.
+  </Step>
+
+  <Step title="Abrir filtros">
+    Haz clic en el panel de **Filtros** para expandir las opciones de filtrado.
+  </Step>
+
+  <Step title="Filtrar por Duplicado">
+    Selecciona **Duplicado** en el filtro de estado para ver únicamente las facturas marcadas como duplicadas.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/facturas/duplicado.png" alt="Lista de facturas filtrada por estado Duplicado" />
+</Frame>
+
+<Note>
+Las facturas duplicadas se mantienen en el sistema para que puedas revisarlas y decidir qué hacer con ellas. Puedes eliminarlas si confirmas que son duplicados reales, o investigar si hay algún error.
+</Note>
+
+## Próximos pasos
+
+<CardGroup cols={2}>
+  <Card
+    title="Gestionar facturas"
+    icon="file-invoice"
+    href="/facturas/cambiar-estado"
+  >
+    Aprende a cambiar el estado de tus facturas importadas.
+  </Card>
+
+  <Card
+    title="Exportar facturas"
+    icon="download"
+    href="/facturas/exportar"
+  >
+    Exporta tus facturas a Excel para análisis externos.
+  </Card>
+
+  <Card
+    title="Agregar documentación"
+    icon="paperclip"
+    href="/facturas/visualizar-editar"
+  >
+    Adjunta documentos de respaldo a tus facturas.
+  </Card>
+
+  <Card
+    title="Gestionar proveedores"
+    icon="building"
+    href="/proveedores/crear-editar"
+  >
+    Administra los proveedores creados automáticamente.
+  </Card>
+</CardGroup>

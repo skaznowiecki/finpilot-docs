@@ -1,0 +1,145 @@
+---
+title: "Etiquetas"
+icon: "tags"
+---
+
+En FinPilot existen dos tipos de etiquetas: **etiquetas de proveedores** y **etiquetas de facturas**. En esta sección nos enfocamos en las etiquetas a nivel factura.
+
+<Info>
+Para conocer sobre etiquetas de proveedores, consulta la sección [Etiquetas de proveedores](/proveedores/etiquetas).
+</Info>
+
+## ¿Para qué sirven las etiquetas de facturas?
+
+Las etiquetas te permiten **agrupar facturas individuales** bajo una lógica específica que tenga sentido para tu organización.
+
+**Casos de uso comunes:**
+
+<CardGroup cols={2}>
+  <Card title="Facturas para auditoría" icon="magnifying-glass">
+    Marca las facturas que necesitan ser revisadas por el equipo de auditoría.
+  </Card>
+
+  <Card title="Facturas con dudas" icon="circle-question">
+    Agrupa facturas que tienen inconsistencias o requieren verificación adicional.
+  </Card>
+
+  <Card title="Facturas urgentes" icon="bolt">
+    Identifica facturas que necesitan atención prioritaria.
+  </Card>
+
+  <Card title="Por proyecto o área" icon="folder">
+    Organiza facturas según el proyecto, departamento o centro de costos.
+  </Card>
+</CardGroup>
+
+---
+
+## Crear una etiqueta
+
+<Card
+  title="Acceder a Etiquetas de Facturas"
+  icon="arrow-up-right-from-square"
+  href="https://app.finpilot.ar/invoices/tags"
+>
+  Administra las etiquetas disponibles para tus facturas.
+</Card>
+
+Para crear una nueva etiqueta:
+
+<Steps>
+  <Step title="Ir a la sección de etiquetas">
+    Accede a [Etiquetas de Facturas](https://app.finpilot.ar/invoices/tags).
+  </Step>
+
+  <Step title="Crear nueva etiqueta">
+    Haz clic en el botón **+ Nueva Etiqueta**.
+  </Step>
+
+  <Step title="Configurar la etiqueta">
+    Define el nombre y selecciona un color para identificarla fácilmente.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/facturas/etiqueta-nueva.png" alt="Modal para crear una nueva etiqueta de factura" />
+</Frame>
+
+<Tip>
+Elige colores distintivos para cada etiqueta. Esto te ayudará a identificar rápidamente las facturas en el listado.
+</Tip>
+
+---
+
+## Asignar etiquetas a facturas
+
+Una vez creadas las etiquetas, puedes asignarlas a las facturas directamente desde el [listado de facturas](https://app.finpilot.ar/invoices).
+
+<Steps>
+  <Step title="Ir al listado de facturas">
+    Accede al [listado de facturas](https://app.finpilot.ar/invoices).
+  </Step>
+
+  <Step title="Buscar la columna Etiquetas">
+    Localiza la columna **Etiquetas** en la fila de la factura que deseas etiquetar.
+  </Step>
+
+  <Step title="Asignar etiqueta">
+    Haz clic en la columna de etiquetas y selecciona la etiqueta que deseas asignar.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/facturas/asignar-etiqueta.png" alt="Asignar etiqueta a una factura desde el listado" />
+</Frame>
+
+<Note>
+Puedes asignar **múltiples etiquetas** a una misma factura si es necesario.
+</Note>
+
+---
+
+## Filtrar facturas por etiquetas
+
+Una de las principales ventajas de las etiquetas es poder **filtrar el listado** para ver únicamente las facturas que te interesan.
+
+<Steps>
+  <Step title="Abrir filtros">
+    En el listado de facturas, expande el panel de **Filtros**.
+  </Step>
+
+  <Step title="Seleccionar etiquetas">
+    Utiliza el filtro de **Etiquetas** para seleccionar una o más etiquetas.
+  </Step>
+
+  <Step title="Ver resultados">
+    El listado mostrará únicamente las facturas que tengan las etiquetas seleccionadas.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/facturas/filtro-etiquetas.png" alt="Filtrar facturas por etiquetas" />
+</Frame>
+
+<Tip>
+Combina el filtro de etiquetas con otros filtros (estado, proveedor, fechas) para búsquedas más precisas.
+</Tip>
+
+---
+
+## Diferencia entre etiquetas de facturas y proveedores
+
+| Característica | Etiquetas de Facturas | Etiquetas de Proveedores |
+|----------------|----------------------|--------------------------|
+| **Se asignan a** | Facturas individuales | Proveedores |
+| **Propósito** | Organizar facturas específicas | Categorizar proveedores |
+| **Política de pago** | No | Sí, permite configurar días de pago |
+| **Herencia** | No aplica | Las facturas heredan las etiquetas del proveedor |
+
+<Card
+  title="Etiquetas de proveedores"
+  icon="building"
+  href="/proveedores/etiquetas"
+>
+  Aprende a usar etiquetas para organizar proveedores y configurar políticas de pago.
+</Card>

@@ -1,0 +1,89 @@
+---
+title: "Organizaciones"
+icon: "sitemap"
+---
+
+Las organizaciones representan **entidades hijas** dentro de tu empresa. Pueden ser subsidiarias, filiales, o incluso la misma empresa operando bajo una razón social diferente.
+
+<Card
+  title="Acceder a Organizaciones"
+  icon="arrow-up-right-from-square"
+  href="https://app.finpilot.ar/organizations"
+>
+  Administra las organizaciones de tu empresa.
+</Card>
+
+---
+
+## ¿Para qué sirven las organizaciones?
+
+Configurar tus organizaciones tiene dos propósitos principales:
+
+<CardGroup cols={2}>
+  <Card title="Mejorar la extracción con IA" icon="robot">
+    Al conocer las diferentes razones sociales de tu empresa, la IA puede extraer la información de las facturas de manera más precisa y detectar correctamente a qué entidad pertenece cada factura.
+  </Card>
+
+  <Card title="Asignación automática" icon="wand-magic-sparkles">
+    El sistema puede asignar automáticamente una organización a cada factura basándose en la información extraída, facilitando la organización y el seguimiento.
+  </Card>
+</CardGroup>
+
+<Info>
+Mientras más completa sea la información de tus organizaciones, mejor será la precisión de la IA al procesar facturas.
+</Info>
+
+---
+
+## Crear una organización
+
+Para agregar una nueva organización:
+
+<Steps>
+  <Step title="Ir a Organizaciones">
+    Accede a [Organizaciones](https://app.finpilot.ar/organizations).
+  </Step>
+
+  <Step title="Nueva Organización">
+    Haz clic en el botón **Nueva Organización**.
+  </Step>
+
+  <Step title="Completar datos">
+    Ingresa la información de la organización.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/empresa/organizaciones.png" alt="Modal para crear una nueva organización" />
+</Frame>
+
+### Campos disponibles
+
+| Campo | Descripción | Requerido |
+|-------|-------------|-----------|
+| **Nombre de la Organización** | Nombre o razón social de la entidad | Sí |
+| **CUIT** | Código Único de Identificación Tributaria | Sí |
+| **URL del Logo** | Enlace a la imagen del logo de la organización | No |
+| **Información Adicional** | Campos personalizados clave-valor | No |
+
+<Tip>
+Usa la sección de **Información Adicional** para agregar datos específicos como sitio web, teléfono, dirección u otros datos relevantes para identificar la organización.
+</Tip>
+
+---
+
+## Casos de uso
+
+<AccordionGroup>
+  <Accordion title="Empresa con múltiples subsidiarias" icon="building">
+    Una empresa matriz que tiene varias subsidiarias con diferentes CUITs. Cada subsidiaria se configura como una organización para que las facturas se asignen automáticamente a la entidad correcta.
+  </Accordion>
+
+  <Accordion title="Misma empresa, diferentes razones sociales" icon="id-card">
+    Una empresa que opera con diferentes nombres comerciales o razones sociales. Configurar cada una como organización permite que la IA identifique correctamente las facturas.
+  </Accordion>
+
+  <Accordion title="Unidades de negocio independientes" icon="briefcase">
+    Divisiones o unidades de negocio que facturan de forma independiente y necesitan ser identificadas por separado en el sistema.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,139 @@
+---
+title: "Usuarios y Roles"
+icon: "users"
+---
+
+## Usuarios
+
+<Card
+  title="Acceder a Usuarios"
+  icon="arrow-up-right-from-square"
+  href="https://app.finpilot.ar/users"
+>
+  Administra los usuarios de tu empresa.
+</Card>
+
+<Frame>
+  <img src="/images/users/listado.png" alt="Lista de usuarios en FinPilot" />
+</Frame>
+
+### Crear un nuevo usuario
+
+<Steps>
+  <Step title="Acceder a la sección de usuarios">
+    Navega a [Usuarios](https://app.finpilot.ar/users).
+  </Step>
+
+  <Step title="Abrir el formulario de creación">
+    Haz clic en **"+ Crear Usuario"** en la esquina superior derecha.
+  </Step>
+
+  <Step title="Completar la información">
+    - **Nombre y Apellido**
+    - **Email** (debe ser único)
+    - **Contraseña**
+    - **Rol** (admin, read, write o personalizado)
+  </Step>
+
+  <Step title="Guardar">
+    Haz clic en **"Crear"** para crear el usuario.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/users/crear.png" alt="Formulario de crear usuario" />
+</Frame>
+
+---
+
+## Roles
+
+Los roles agrupan permisos y se asignan a usuarios. FinPilot incluye tres roles predefinidos:
+
+<Card
+  title="Acceder a Roles"
+  icon="arrow-up-right-from-square"
+  href="https://app.finpilot.ar/roles"
+>
+  Administra los roles y permisos.
+</Card>
+
+<Frame>
+  <img src="/images/users/roles.png" alt="Lista de roles en FinPilot" />
+</Frame>
+
+### Roles predefinidos
+
+<AccordionGroup>
+  <Accordion title="Admin (33 permisos)" icon="shield">
+    - Acceso completo a todos los recursos
+    - Gestión de usuarios, roles y permisos
+    - Acceso a todas las configuraciones
+
+    **Cuándo usar:** Administradores principales de la empresa.
+  </Accordion>
+
+  <Accordion title="Write (26 permisos)" icon="pen">
+    - Crear, editar y eliminar facturas
+    - Gestionar proveedores
+    - No puede gestionar usuarios o roles
+
+    **Cuándo usar:** Equipo que gestiona facturas diariamente.
+  </Accordion>
+
+  <Accordion title="Read (10 permisos)" icon="eye">
+    - Solo lectura de todos los recursos
+    - No puede crear, editar o eliminar
+
+    **Cuándo usar:** Usuarios que solo consultan información o generan reportes.
+  </Accordion>
+</AccordionGroup>
+
+### Comparación rápida
+
+| Rol | Permisos | Gestión de Usuarios | Crear/Editar Facturas | Ver Datos |
+|-----|----------|---------------------|----------------------|-----------|
+| **admin** | 33 | Sí | Sí | Sí |
+| **write** | 26 | No | Sí | Sí |
+| **read** | 10 | No | No | Sí |
+
+### Crear un rol personalizado
+
+<Steps>
+  <Step title="Acceder a roles">
+    Navega a [Roles](https://app.finpilot.ar/roles).
+  </Step>
+
+  <Step title="Crear nuevo rol">
+    Haz clic en **"+ Crear Rol"**.
+  </Step>
+
+  <Step title="Configurar">
+    Define nombre, descripción y selecciona los permisos específicos.
+  </Step>
+
+  <Step title="Guardar">
+    Haz clic en **"Crear"** para guardar el rol.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/users/create-role.png" alt="Formulario de crear rol personalizado" />
+</Frame>
+
+---
+
+## Permisos
+
+Los permisos controlan qué acciones puede realizar cada usuario. Se asignan a través de roles.
+
+<Frame>
+  <img src="/images/users/permissions.png" alt="Vista de permisos asignados al rol Admin" />
+</Frame>
+
+- La interfaz se adapta automáticamente según los permisos del usuario
+- Si un usuario no tiene un permiso, los elementos relacionados no aparecen o están deshabilitados
+
+<Tip>
+Comienza usando los roles predefinidos. Puedes crear roles personalizados más adelante cuando tengas necesidades específicas.
+</Tip>

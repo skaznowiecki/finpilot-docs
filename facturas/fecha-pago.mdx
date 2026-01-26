@@ -1,0 +1,166 @@
+---
+title: "Fecha de Pago"
+icon: "calendar"
+---
+
+La fecha de pago indica **cuándo se realizará el pago** a un proveedor por una factura específica. Dentro de una empresa existen diferentes reglas que determinan los plazos de pago según el tipo de proveedor, la urgencia de la factura o las políticas corporativas.
+
+<Info>
+Esta información es **netamente organizativa**. Sirve para visualizar en el dashboard los próximos pagos que debe realizar la empresa y planificar el flujo de caja.
+</Info>
+
+## ¿Cuándo se calcula la fecha de pago?
+
+La fecha de pago se calcula **automáticamente** en el momento en que una factura pasa al estado **[Aprobada](/facturas/cambiar-estado)**. Los días configurados se contabilizan a partir de esa transición.
+
+<Note>
+**Ejemplo**: Si una factura se aprueba el 1 de febrero y la política de pago es de 30 días, la fecha de pago será el 3 de marzo.
+</Note>
+
+---
+
+## Niveles de configuración
+
+FinPilot permite configurar la fecha de pago en diferentes niveles, cada uno con distinta prioridad. **Las configuraciones más específicas sobrescriben a las más generales.**
+
+<Steps>
+  <Step title="Nivel Empresa (prioridad más baja)">
+    Configuración por defecto que aplica a todas las facturas que no tienen otra regla específica.
+  </Step>
+
+  <Step title="Nivel Etiqueta de proveedor">
+    Aplica a todos los proveedores que tengan asignada una etiqueta específica.
+  </Step>
+
+  <Step title="Nivel Proveedor">
+    Configuración específica para un proveedor individual.
+  </Step>
+
+  <Step title="Nivel Factura (prioridad más alta)">
+    Configuración directa en la factura, sobrescribe todas las anteriores.
+  </Step>
+</Steps>
+
+---
+
+## 1. Configuración a nivel Empresa
+
+Esta es la configuración **por defecto** que aplica cuando ninguna otra regla es aplicable. Se configura en la sección de [Empresa](/administracion/empresa).
+
+<Card
+  title="Acceder a Configuración"
+  icon="arrow-up-right-from-square"
+  href="https://app.finpilot.ar/settings"
+>
+  Configura la política de pagos por defecto de tu empresa.
+</Card>
+
+<Frame>
+  <img src="/images/empresa/politica-pagos.png" alt="Configuración de política de pagos a nivel empresa" />
+</Frame>
+
+En esta sección defines el **número de días** que se aplicará por defecto para calcular la fecha de pago de todas las facturas que no tengan una configuración más específica.
+
+---
+
+## 2. Configuración a nivel Etiqueta de proveedor
+
+Las [etiquetas de proveedores](/proveedores/etiquetas) permiten agrupar proveedores y aplicarles reglas comunes, incluyendo políticas de pago.
+
+<Frame>
+  <img src="/images/proveedor/etiquetas.png" alt="Crear etiqueta con política de días de pago" />
+</Frame>
+
+Al crear una etiqueta, puedes definir una **Política de Días de Pago**. Una vez que asignas esta etiqueta a uno o más proveedores, todas las facturas de esos proveedores que pasen al estado **Aprobada** utilizarán esta configuración.
+
+<Tip>
+**Caso de uso**: Crea una etiqueta "Proveedores Premium" con 15 días de pago para proveedores estratégicos, y otra etiqueta "Proveedores Estándar" con 60 días para el resto.
+</Tip>
+
+---
+
+## 3. Configuración a nivel Proveedor
+
+Puedes configurar una política de días de pago **específica para un proveedor individual**. Esta configuración sobrescribe cualquier etiqueta que tenga asignada.
+
+<Frame>
+  <img src="/images/proveedor/etiqueta-proveedor.png" alt="Configuración de política de pago a nivel proveedor" />
+</Frame>
+
+Para configurar esto, accede al proveedor y edita el campo **Política de Días de Pago** en la sección de Configuración. Para más detalles, consulta [Crear y Editar proveedores](/proveedores/crear-editar).
+
+<Tip>
+**Caso de uso**: Un proveedor tiene la etiqueta "Proveedores Estándar" (60 días), pero por acuerdo especial se le paga a 45 días. Configuras los 45 días directamente en el proveedor.
+</Tip>
+
+---
+
+## 4. Configuración a nivel Factura
+
+Esta es la configuración con **mayor prioridad**. Permite definir manualmente la fecha de pago de una factura específica, sobrescribiendo todas las reglas anteriores.
+
+Para modificar la fecha de pago de una factura:
+
+<Steps>
+  <Step title="Acceder a la factura">
+    Ingresa a la [vista de la factura](/facturas/visualizar-editar) haciendo clic en ella desde el listado.
+  </Step>
+
+  <Step title="Editar la factura">
+    Haz clic en el botón **Editar** en la esquina superior derecha.
+  </Step>
+
+  <Step title="Seleccionar fecha de pago">
+    Utiliza el selector de fecha para elegir la fecha de pago deseada.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/facturas/editar-fecha-de-pago.png" alt="Editar fecha de pago de una factura" />
+</Frame>
+
+<Tip>
+**Caso de uso**: Una factura específica tiene que pagarse la próxima semana por un acuerdo puntual, independientemente de las políticas configuradas.
+</Tip>
+
+---
+
+## Ejemplos prácticos
+
+### Ejemplo 1: Empresa con múltiples tipos de proveedores
+
+**Configuración:**
+- **Nivel Empresa**: 60 días (política por defecto)
+- **Etiqueta "Servicios Críticos"**: 15 días
+- **Proveedor "Hosting Premium SRL"**: 30 días (tiene etiqueta "Servicios Críticos")
+
+**Escenario**: Llega una factura del proveedor "Hosting Premium SRL" y se aprueba el 1 de marzo.
+
+**Resultado**: La fecha de pago será el **31 de marzo** (30 días después), porque la configuración del proveedor (30 días) sobrescribe la etiqueta "Servicios Críticos" (15 días).
+
+---
+
+### Ejemplo 2: Factura urgente con fecha específica
+
+**Configuración:**
+- **Nivel Empresa**: 45 días
+- **Proveedor "Consultora ABC"**: Sin configuración específica
+
+**Escenario**: Llega una factura de "Consultora ABC" el 10 de enero, se aprueba el mismo día, pero por un acuerdo especial debe pagarse el 20 de enero.
+
+**Resultado**: El usuario edita la factura y selecciona manualmente el **20 de enero** como fecha de pago, ignorando la política de 45 días de la empresa.
+
+---
+
+## Resumen de prioridades
+
+| Nivel | Dónde se configura | Prioridad |
+|-------|-------------------|-----------|
+| **Empresa** | Configuración General | Más baja |
+| **Etiqueta** | Etiquetas de proveedores | Media |
+| **Proveedor** | Ficha del proveedor | Alta |
+| **Factura** | Edición de la factura | **Más alta** |
+
+<Note>
+Recuerda: siempre gana la configuración más específica. Si una factura tiene fecha de pago manual, esa es la que aplica, sin importar las otras configuraciones.
+</Note>

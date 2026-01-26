@@ -1,106 +1,132 @@
 ---
 title: "¿Cómo funciona?"
-description: "Integración por email para recibir y procesar facturas automáticamente"
+icon: "envelope"
 ---
 
-## Integración por Email
+La integración por email te permite recibir y procesar facturas automáticamente. Al configurar la redirección de correo, todas las facturas que recibes se envían a FinPilot para su procesamiento sin intervención manual.
 
-### Propósito
+<Card
+  title="Acceder a Integraciones de Email"
+  icon="arrow-up-right-from-square"
+  href="https://app.finpilot.ar/emails"
+>
+  Administra tus destinos de email y revisa los correos procesados.
+</Card>
 
-La integración por email de FinPilot te permite recibir y procesar facturas automáticamente sin intervención manual. Al configurar la redirección de correo electrónico, todas las facturas que recibes en tu cuenta de correo se envían automáticamente a FinPilot para su procesamiento.
+---
 
-### ¿Qué hace FinPilot con las facturas?
+## ¿Qué hace FinPilot con los emails?
 
-Cuando FinPilot recibe un email con facturas adjuntas, el sistema:
+Cuando FinPilot recibe un email con facturas adjuntas:
 
-1. **Detecta automáticamente** los archivos adjuntos (PDFs e imágenes) que contienen facturas
-2. **Valida** que los adjuntos sean facturas reales usando inteligencia artificial
-3. **Extrae los datos** de cada factura automáticamente:
-   - Número de factura
-   - Fechas (emisión y vencimiento)
-   - Montos (subtotal, impuestos, total)
-   - Información del proveedor
-   - Líneas de detalle
-4. **Gestiona los proveedores** automáticamente:
-   - Extrae la información del proveedor de la factura
-   - Si el proveedor no existe en el sistema, lo crea automáticamente con los datos extraídos
-   - Si el proveedor ya existe, le asigna la factura al proveedor existente
-5. **Crea las facturas** en el sistema con todos los datos extraídos
-6. **Asigna el estado inicial**: Las facturas se crean en estado **pendiente** para que puedas revisarlas y aprobarlas
-7. **Indexa y organiza** las facturas para que puedas gestionarlas fácilmente
+<Steps>
+  <Step title="Detecta los adjuntos">
+    Identifica automáticamente PDFs e imágenes que contienen facturas.
+  </Step>
 
-Todo este proceso ocurre de forma automática, sin necesidad de cargar archivos manualmente o ingresar datos.
+  <Step title="Valida con IA">
+    Verifica que los adjuntos sean facturas reales usando inteligencia artificial.
+  </Step>
 
-## Funcionalidades del módulo
+  <Step title="Extrae los datos">
+    Obtiene automáticamente: número de factura, fechas, montos, información del proveedor y líneas de detalle.
+  </Step>
 
-El módulo de integración por email de FinPilot ofrece varias funcionalidades poderosas para gestionar y procesar tus facturas:
+  <Step title="Gestiona el proveedor">
+    Si el proveedor no existe, lo [crea automáticamente](/proveedores/crear-editar). Si existe, asigna la factura al proveedor correspondiente.
+  </Step>
 
-### Sistema de filtros
+  <Step title="Crea la factura">
+    La factura se crea en estado [Pendiente](/facturas/cambiar-estado) para que puedas revisarla y aprobarla.
+  </Step>
+</Steps>
 
-El módulo permite filtrar los emails procesados de múltiples formas:
+---
 
-- **Filtrar por asunto**: Busca emails específicos usando palabras clave en el asunto
-- **Filtrar por destinatario**: Filtra emails por la dirección de destino configurada
-- **Filtrar por emails previamente configurados**: Selecciona entre los destinos de email que has configurado previamente
-- **Filtros combinados**: Combina múltiples criterios para búsquedas más precisas
+## Funcionalidades
 
-<Tip>
-**Consejo**: Usa los filtros para encontrar rápidamente emails específicos o revisar el procesamiento de un destino de email en particular.
-</Tip>
+<AccordionGroup>
+  <Accordion title="Sistema de filtros" icon="filter">
+    Filtra los emails procesados por:
+    - Asunto del email
+    - Dirección de destino
+    - Destinos de email configurados
+    - Combinación de múltiples criterios
+  </Accordion>
 
-### Detección automática de facturas
+  <Accordion title="Detección automática de facturas" icon="robot">
+    - La IA analiza los adjuntos para identificar facturas
+    - Extrae datos automáticamente (número, fecha, monto, proveedor)
+    - Valida que los adjuntos sean facturas reales
+    - Cada email muestra claramente si contiene facturas y cuántas
+  </Accordion>
 
-El sistema detecta automáticamente si los emails tienen facturas adjuntas:
+  <Accordion title="Historial de emails" icon="clock-rotate-left">
+    - Lista completa de todos los emails procesados
+    - Estado de facturas por cada email
+    - Acceso al cuerpo del email y facturas adjuntas
+    - Auditoría completa del procesamiento
+  </Accordion>
+</AccordionGroup>
 
-- **Detección inteligente**: La IA analiza los archivos adjuntos (PDFs e imágenes) para identificar facturas
-- **Indexación automática**: Las facturas detectadas se indexan automáticamente en el sistema
-- **Extracción de datos**: Los datos de las facturas (número, fecha, monto, proveedor, etc.) se extraen automáticamente
-- **Validación**: El sistema valida que los adjuntos sean facturas reales antes de procesarlos
-
-<Check>
-**Resultado**: Cada email procesado muestra claramente si contiene facturas y cuántas fueron detectadas.
-</Check>
-
-### Visualización de facturas detectadas
-
-Puedes ver todas las facturas que fueron detectadas en cada email procesado:
-
-- **Lista de facturas**: En los detalles de cada email, verás una lista de todas las facturas adjuntas
-- **Información detallada**: Cada factura muestra su tipo (PDF, imagen) y nombre
-- **Acceso directo**: Puedes abrir o descargar cada factura directamente desde el email procesado
-- **Vista previa**: Accede rápidamente a las facturas sin tener que buscar en otras secciones
-
-### Historial de emails procesados
-
-El módulo mantiene un historial completo de todos los emails procesados:
-
-- **Lista completa**: Ve todos los emails que han sido procesados por el sistema
-- **Estado de facturas**: Cada email muestra claramente si contiene facturas o no ("Sin facturas" o el número de facturas detectadas)
-- **Información del email**: Accede a detalles como remitente, destinatario, asunto y fecha
-- **Ver detalles**: Haz clic en "Ver" para acceder a información completa del email, incluyendo el cuerpo del mensaje y las facturas adjuntas
-
-<Note>
-**Nota**: Todos los emails procesados se almacenan en el historial, permitiéndote revisar y auditar el procesamiento de facturas en cualquier momento.
-</Note>
+---
 
 ## Configurar redirección
 
-Para que FinPilot pueda recibir y procesar tus facturas automáticamente, necesitas configurar la redirección de correo desde tu proveedor de email. Elige tu proveedor para ver las instrucciones detalladas:
+Para que FinPilot reciba tus facturas, necesitas configurar la redirección desde tu proveedor de email:
 
 <CardGroup cols={2}>
   <Card
     title="Gmail"
-    icon="envelope"
+    icon="google"
     href="/integraciones/gmail"
   >
     Configura Gmail para reenviar facturas automáticamente a FinPilot.
   </Card>
 
   <Card
-    title="Outlook"
-    icon="envelope"
+    title="Outlook / Hotmail"
+    icon="microsoft"
     href="/integraciones/outlook-hotmail"
   >
     Configura Outlook o Hotmail para procesar facturas automáticamente.
+  </Card>
+</CardGroup>
+
+---
+
+## Referencias relacionadas
+
+<CardGroup cols={2}>
+  <Card
+    title="Importar facturas"
+    icon="upload"
+    href="/facturas/importar"
+  >
+    Otras formas de cargar facturas al sistema (manual y masiva).
+  </Card>
+
+  <Card
+    title="Estados de facturas"
+    icon="circle-check"
+    href="/facturas/cambiar-estado"
+  >
+    Las facturas importadas por email se crean en estado Pendiente.
+  </Card>
+
+  <Card
+    title="Crear proveedores"
+    icon="building"
+    href="/proveedores/crear-editar"
+  >
+    Los proveedores se crean automáticamente si no existen.
+  </Card>
+
+  <Card
+    title="Detección de duplicados"
+    icon="copy"
+    href="/facturas/importar#detección-de-facturas-duplicadas"
+  >
+    FinPilot detecta automáticamente facturas duplicadas.
   </Card>
 </CardGroup>

@@ -1,0 +1,57 @@
+---
+title: "Empresa"
+icon: "building"
+---
+
+En esta sección puedes configurar la información de tu empresa y las políticas generales que aplican a todo el sistema.
+
+<Card
+  title="Acceder a Configuración"
+  icon="arrow-up-right-from-square"
+  href="https://app.finpilot.ar/settings"
+>
+  Configura la información y políticas de tu empresa.
+</Card>
+
+<Frame>
+  <img src="/images/empresa/configuracion.png" alt="Pantalla de configuración de la empresa" />
+</Frame>
+
+---
+
+## Información de la Empresa
+
+Configura los datos básicos de tu empresa:
+
+| Campo | Descripción |
+|-------|-------------|
+| **Nombre de la Empresa** | Nombre comercial o razón social |
+| **Descripción** | Descripción breve de la empresa |
+| **CUIT** | Código Único de Identificación Tributaria (11 dígitos) |
+| **Logo de la Empresa** | Imagen que identifica a tu empresa en el sistema |
+
+<Tip>
+Para el logo, se recomienda usar formato **PNG** de **500x500px** con relación de aspecto 1:1 (cuadrado).
+</Tip>
+
+---
+
+## Configuración de Pagos
+
+### Política de Fecha de Pago
+
+Define la **política de días de pago por defecto** para tu empresa. Este valor se utiliza para calcular automáticamente la fecha de pago de las facturas cuando no existe una configuración más específica.
+
+<Info>
+La política de fecha de pago a nivel empresa tiene la **prioridad más baja**. Puede ser sobrescrita por configuraciones a nivel etiqueta, proveedor o factura individual.
+</Info>
+
+<Card
+  title="Entender las políticas de fecha de pago"
+  icon="calendar"
+  href="/facturas/fecha-pago"
+>
+  Aprende cómo funcionan los diferentes niveles de configuración y sus prioridades.
+</Card>
+
+**Ejemplo:** Si configuras 30 días, todas las facturas que se aprueben (y no tengan otra configuración específica) tendrán su fecha de pago calculada a 30 días desde la aprobación.

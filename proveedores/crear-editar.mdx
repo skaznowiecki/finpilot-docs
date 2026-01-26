@@ -1,0 +1,178 @@
+---
+title: "Crear y Editar"
+icon: "pen"
+---
+
+Los proveedores en FinPilot pueden crearse de forma automática o manual. Una vez creados, puedes completar su información para tener un registro completo y organizado.
+
+## Formas de crear un proveedor
+
+<Tabs>
+  <Tab title="Automática">
+    ### Creación automática
+
+    FinPilot crea proveedores automáticamente en dos situaciones:
+
+    <AccordionGroup>
+      <Accordion title="Integración por email" icon="envelope">
+        Cuando recibes facturas a través de la [integración por email](/integraciones/email), el sistema:
+
+        1. Extrae los datos del proveedor de la factura usando IA
+        2. Busca si el proveedor ya existe en tu base de datos
+        3. Si **no existe**, crea automáticamente un nuevo proveedor con la información extraída
+        4. Asigna la factura al proveedor (nuevo o existente)
+
+        Todo esto ocurre sin intervención manual.
+      </Accordion>
+
+      <Accordion title="Importación de facturas" icon="upload">
+        Al [importar facturas](/facturas/importar) de forma manual o masiva:
+
+        1. El sistema extrae la información del proveedor de cada factura
+        2. Si el proveedor **no existe** en el sistema, lo crea automáticamente
+        3. La factura queda vinculada al proveedor correspondiente
+
+        Esto te permite cargar facturas sin preocuparte por crear los proveedores previamente.
+      </Accordion>
+    </AccordionGroup>
+
+    <Tip>
+    Los proveedores creados automáticamente pueden tener información incompleta. Te recomendamos revisarlos y completar los datos faltantes para mejorar la calidad de tus registros y exportaciones.
+    </Tip>
+  </Tab>
+
+  <Tab title="Manual">
+    ### Creación manual
+
+    Para crear un proveedor manualmente:
+
+    <Card
+      title="Crear nuevo proveedor"
+      icon="arrow-up-right-from-square"
+      href="https://app.finpilot.ar/parties/create"
+    >
+      Accede al formulario de creación de proveedores.
+    </Card>
+
+    <Frame>
+      <img src="/images/proveedor/nuevo-proveedor.png" alt="Formulario para crear un nuevo proveedor" />
+    </Frame>
+  </Tab>
+</Tabs>
+
+---
+
+## Información del proveedor
+
+### Información básica
+
+Al crear o editar un proveedor, puedes completar los siguientes datos:
+
+| Campo | Descripción | Requerido |
+|-------|-------------|-----------|
+| **Nombre / Razón Social** | Nombre comercial o razón social del proveedor | Sí |
+| **Nombre y Apellido** | Datos de contacto personal | No |
+| **Tipo de Identificación** | CUIT, CUIL, DNI, etc. | Sí |
+| **Número de Identificación** | Número del documento | Sí |
+| **Régimen** | Régimen fiscal (Responsable Inscripto, Monotributo, etc.) | Sí |
+| **Email** | Correo electrónico de contacto | No |
+| **Teléfono** | Número de teléfono | No |
+| **Dirección** | Dirección completa | No |
+
+### Configuración
+
+En la sección de configuración puedes definir:
+
+<CardGroup cols={2}>
+  <Card title="Política de Días de Pago" icon="calendar">
+    Define cuántos días después de aprobar una factura se realizará el pago a este proveedor. Esta configuración sobrescribe las políticas de etiquetas y empresa.
+  </Card>
+
+  <Card title="Etiquetas" icon="tags">
+    Asigna etiquetas para categorizar al proveedor. Las etiquetas pueden incluir políticas de pago y facilitan el filtrado de facturas.
+  </Card>
+</CardGroup>
+
+<Info>
+Para entender cómo funcionan las políticas de días de pago y sus prioridades, consulta la sección [Fecha de Pago](/facturas/fecha-pago).
+</Info>
+
+---
+
+## Cuentas bancarias
+
+Puedes asociar **múltiples cuentas bancarias** a cada proveedor. Esto es útil para tener toda la información de pago centralizada.
+
+<Frame>
+  <img src="/images/proveedor/cuenta-bancaria.png" alt="Modal para agregar cuenta bancaria" />
+</Frame>
+
+Para agregar una cuenta bancaria:
+
+<Steps>
+  <Step title="Ir a la sección Cuentas Bancarias">
+    En el formulario del proveedor, localiza la sección **Cuentas Bancarias**.
+  </Step>
+
+  <Step title="Agregar cuenta">
+    Haz clic en **+ Agregar Cuenta**.
+  </Step>
+
+  <Step title="Completar datos">
+    Ingresa los datos de la cuenta:
+    - **CBU** (requerido)
+    - **Nombre del Banco**
+    - **Alias de la Cuenta**
+    - **Cuenta principal** (marca esta opción si es la cuenta principal de pago)
+  </Step>
+</Steps>
+
+<Tip>
+Marca una cuenta como **principal** para identificar rápidamente dónde realizar los pagos a este proveedor.
+</Tip>
+
+---
+
+## Importancia de la información completa
+
+<Warning>
+Mantener la información de los proveedores completa y actualizada es fundamental para aprovechar al máximo FinPilot.
+</Warning>
+
+**¿Por qué es importante?**
+
+<CardGroup cols={2}>
+  <Card title="Exportaciones más completas" icon="file-excel">
+    Al [exportar facturas](/facturas/exportar), se incluyen todos los campos del proveedor. Mientras más información tengas, más completo será tu archivo Excel.
+  </Card>
+
+  <Card title="Mejor organización" icon="folder-tree">
+    Las etiquetas y políticas de pago te ayudan a organizar y automatizar la gestión de tus proveedores.
+  </Card>
+
+  <Card title="Información de pago centralizada" icon="building-columns">
+    Las cuentas bancarias te permiten tener toda la información necesaria para realizar pagos en un solo lugar.
+  </Card>
+
+  <Card title="Reconocimiento automático" icon="robot">
+    Con información completa, FinPilot puede reconocer mejor a los proveedores en futuras facturas.
+  </Card>
+</CardGroup>
+
+---
+
+## Restauración de proveedores eliminados
+
+<Note>
+**Importante**: Si eliminas un proveedor y posteriormente se crea uno nuevo con los mismos datos (ya sea de forma manual o automática), FinPilot **restaura automáticamente** el proveedor original con toda la información que tenía cargada.
+</Note>
+
+Esto significa que:
+
+- No pierdes el historial de información del proveedor
+- Las cuentas bancarias, etiquetas y configuraciones se recuperan
+- El proveedor vuelve a estar disponible como si nunca se hubiera eliminado
+
+<Tip>
+Esta funcionalidad es útil si eliminaste un proveedor por error o si un proveedor que ya no trabajabas vuelve a enviarte facturas.
+</Tip>

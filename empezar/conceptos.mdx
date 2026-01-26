@@ -1,0 +1,255 @@
+---
+title: "Conceptos"
+description: "Conceptos clave y terminología de FinPilot"
+icon: "lightbulb"
+---
+
+Antes de comenzar a usar FinPilot, es importante entender los conceptos fundamentales que componen la plataforma. Esta guía te ayudará a comprender cómo se relacionan entre sí y cómo funcionan en conjunto.
+
+## Facturas
+
+<Icon icon="file-invoice" iconType="solid" /> Las facturas son el **concepto central de FinPilot**. Toda la plataforma gira alrededor de la gestión eficiente de facturas.
+
+Una factura en FinPilot es la representación digital de una factura física, indexada y organizada en el sistema para facilitar su gestión, seguimiento y control.
+
+### Formas de cargar facturas
+
+Existen tres maneras principales de ingresar facturas al sistema:
+
+<AccordionGroup>
+  <Accordion title="Carga manual (una a una)" icon="upload">
+    El proceso de carga manual te permite subir facturas individualmente con validación humana:
+
+    1. El usuario sube el archivo de la factura (PDF o imagen)
+    2. La inteligencia artificial extrae automáticamente los datos
+    3. El usuario revisa y valida que la información extraída sea correcta
+    4. La factura se crea en el sistema
+
+    <Tip>
+    Este método es ideal cuando necesitas verificar la información de cada factura antes de ingresarla al sistema.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Importación masiva automática" icon="layer-group">
+    Cuando tienes múltiples facturas para procesar:
+
+    1. El usuario selecciona varios archivos de facturas
+    2. El sistema extrae los datos de todas las facturas usando IA de manera automática
+    3. Las facturas se crean en el sistema sin intervención manual
+
+    <Tip>
+    Perfecto para procesar grandes volúmenes de facturas de forma rápida y eficiente.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Integración por email" icon="envelope">
+    El sistema se conecta a una casilla de correo electrónico dedicada:
+
+    1. El usuario configura la redirección de emails hacia FinPilot
+    2. FinPilot lee todos los correos entrantes
+    3. La IA determina si cada correo contiene facturas adjuntas
+    4. Si se detectan facturas, se descargan y se inyectan automáticamente en el sistema
+
+    <Tip>
+    Esta es la forma más automatizada de procesar facturas, ideal para empresas que reciben muchas facturas por email.
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+### Detección inteligente de problemas
+
+FinPilot utiliza inteligencia artificial para detectar automáticamente:
+
+<CardGroup cols={2}>
+  <Card title="Facturas duplicadas" icon="copy">
+    El sistema identifica cuando una factura ya existe en el sistema para evitar procesarla dos veces.
+  </Card>
+
+  <Card title="Facturas con errores" icon="triangle-exclamation">
+    Archivos corruptos o facturas con problemas de lectura son detectados automáticamente.
+  </Card>
+</CardGroup>
+
+<Note>
+Estas facturas problemáticas no se descartan. FinPilot las guarda en un **apartado especial** para que puedas revisarlas y tomar acción cuando lo necesites.
+</Note>
+
+### Funcionalidades adicionales
+
+<Steps>
+  <Step title="Documentos adjuntos">
+    Puedes adjuntar documentos de respaldo a cualquier factura: contratos, órdenes de compra, remitos, o cualquier archivo relevante que necesites vincular.
+  </Step>
+  <Step title="Exportación a Excel">
+    Todas las facturas se pueden exportar a Excel para análisis externos, reportes o integración con otros sistemas.
+  </Step>
+</Steps>
+
+---
+
+## Proveedores
+
+<Icon icon="building" iconType="solid" /> Toda factura tiene un **proveedor asociado**. El proveedor es la persona o empresa que emite la factura.
+
+### Creación de proveedores
+
+Los proveedores pueden crearse de dos formas:
+
+<Tabs>
+  <Tab title="Forma manual">
+    El usuario ingresa manualmente todos los datos del proveedor:
+    - Nombre o razón social
+    - CUIT/CUIL
+    - Información de contacto
+    - Datos bancarios
+
+    Una vez creado, cuando llegue una factura de ese proveedor, **el sistema lo reconocerá automáticamente** y asignará la factura al proveedor correspondiente.
+  </Tab>
+
+  <Tab title="Forma automática">
+    Durante la importación de facturas (masiva o por email):
+    - Si el sistema no encuentra un proveedor existente que coincida
+    - **Crea automáticamente un nuevo proveedor** con los datos extraídos de la factura
+    - El proveedor queda disponible para futuras facturas
+  </Tab>
+</Tabs>
+
+### Sistema de etiquetas
+
+Las etiquetas son una herramienta poderosa para organizar tus proveedores:
+
+<CardGroup cols={2}>
+  <Card title="Filtrado de facturas" icon="filter">
+    Filtra las facturas basándote en las etiquetas de sus proveedores. Por ejemplo: ver todas las facturas de proveedores con etiqueta "Servicios".
+  </Card>
+
+  <Card title="Políticas de pago" icon="calendar-check">
+    Asigna políticas de pago a las etiquetas. Define que los proveedores de cierto tipo se pagan X días después de recibir la factura.
+  </Card>
+</CardGroup>
+
+<Info>
+**Ejemplo de política de pago**: Puedes crear una etiqueta "Proveedores prioritarios" y configurar que todas las facturas de estos proveedores se paguen a los 15 días de recepción, mientras que los "Proveedores estándar" se pagan a los 30 días.
+</Info>
+
+### Exportación
+
+Todos los proveedores se pueden **exportar a Excel** para análisis, reportes o migración de datos.
+
+---
+
+## Integraciones
+
+<Icon icon="plug" iconType="solid" /> FinPilot se integra con servicios externos para automatizar el flujo de trabajo.
+
+### Integración por Email
+
+<Card title="Casilla de correo dedicada" icon="envelope" href="/integraciones/email">
+  FinPilot te proporciona una dirección de email interna a la cual puedes reenviar tus correos con facturas.
+</Card>
+
+**¿Cómo funciona?**
+
+1. Configuras la redirección (forward) desde tu casilla de correo habitual hacia la casilla de FinPilot
+2. FinPilot monitorea continuamente los correos entrantes
+3. La IA analiza cada correo para detectar si contiene facturas
+4. Las facturas detectadas se procesan e indexan automáticamente
+
+<Tip>
+Consulta la [guía de integración por email](/integraciones/email) para instrucciones detalladas de configuración según tu proveedor de correo.
+</Tip>
+
+### Portal de Proveedores
+
+<Warning>
+El Portal está **deshabilitado por defecto**. Si necesitas esta funcionalidad, contacta a [soporte@finpilot.ar](mailto:soporte@finpilot.ar) para solicitar su habilitación.
+</Warning>
+
+El Portal es un espacio de autogestión para tus proveedores donde pueden:
+
+- **Adjuntar facturas** directamente al sistema
+- **Dejar comentarios** sobre sus facturas
+- **Recibir comentarios** de tu equipo
+- **Consultar el estado** de sus facturas
+- **Gestionar su información** de contacto y bancaria
+
+<Info>
+El Portal elimina la necesidad de que los proveedores envíen facturas por email, centralizando toda la comunicación en un solo lugar.
+</Info>
+
+---
+
+## Organizaciones
+
+<Icon icon="sitemap" iconType="solid" /> Una empresa puede tener múltiples **sub-organizaciones**: diferentes subsidiarias, filiales o empresas con distintos nombres comerciales.
+
+### ¿Para qué sirve?
+
+En la sección de Organizaciones puedes configurar esta información para que FinPilot:
+
+- **Reconozca automáticamente** a qué organización pertenece cada factura
+- **Extraiga la información** de manera más efectiva al conocer las diferentes razones sociales
+- **Organice las facturas** por organización para un mejor control
+- **Genere reportes** separados por cada unidad de negocio
+
+### Casos de uso comunes
+
+<CardGroup cols={2}>
+  <Card title="Subsidiarias" icon="building">
+    Empresas con múltiples subsidiarias que operan bajo diferentes nombres legales.
+  </Card>
+
+  <Card title="Unidades de negocio" icon="briefcase">
+    Diferentes líneas de negocio que facturan por separado dentro de la misma organización.
+  </Card>
+
+  <Card title="Sucursales" icon="location-dot">
+    Sucursales en diferentes ubicaciones con facturación independiente.
+  </Card>
+
+  <Card title="Marcas comerciales" icon="tag">
+    Diferentes marcas o nombres comerciales bajo una misma empresa matriz.
+  </Card>
+</CardGroup>
+
+<Tip>
+Configurar correctamente tus organizaciones mejora significativamente la precisión de la extracción automática de datos y facilita la gestión de facturas a nivel corporativo.
+</Tip>
+
+---
+
+## Próximos pasos
+
+<CardGroup cols={2}>
+  <Card
+    title="Importar facturas"
+    icon="upload"
+    href="/facturas/importar"
+  >
+    Aprende a cargar tus primeras facturas en el sistema.
+  </Card>
+
+  <Card
+    title="Configurar email"
+    icon="envelope"
+    href="/integraciones/email"
+  >
+    Automatiza la recepción de facturas por correo electrónico.
+  </Card>
+
+  <Card
+    title="Gestionar proveedores"
+    icon="building"
+    href="/proveedores/crear-editar"
+  >
+    Crea y administra tu base de proveedores.
+  </Card>
+
+  <Card
+    title="Configurar organizaciones"
+    icon="sitemap"
+    href="/administracion/organizaciones"
+  >
+    Configura las sub-organizaciones de tu empresa.
+  </Card>
+</CardGroup>

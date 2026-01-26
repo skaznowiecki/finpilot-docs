@@ -1,0 +1,118 @@
+---
+title: "Estados"
+icon: "circle-check"
+---
+
+Todas las facturas en FinPilot siguen un ciclo de vida representado por diferentes estados. Entender estos estados te ayudará a gestionar eficientemente el flujo de aprobación y pago de tus facturas.
+
+## Ciclo de vida de una factura
+
+<Steps>
+  <Step title="Pendiente">
+    Estado inicial de todas las facturas cuando se cargan al sistema. Indica que la factura está **pendiente de revisión**.
+  </Step>
+
+  <Step title="Pre-aprobada (opcional)">
+    Estado intermedio que indica que la factura ya fue revisada por una persona y está lista para aprobación final.
+  </Step>
+
+  <Step title="Aprobada">
+    La factura ha sido aprobada. En este momento se ejecuta el **[flujo de fecha de pago](/facturas/fecha-pago)**.
+  </Step>
+
+  <Step title="Pagada">
+    La factura ha sido pagada. Estado final del ciclo.
+  </Step>
+</Steps>
+
+---
+
+## Estados disponibles
+
+### Pendiente
+
+<Icon icon="clock" iconType="solid" /> Es el estado inicial de **todas las facturas** cuando se cargan al sistema, ya sea de forma manual, masiva o por email.
+
+Una factura en estado pendiente significa que está esperando ser revisada por alguien del equipo.
+
+### Pre-aprobada
+
+<Icon icon="hourglass-half" iconType="solid" /> Estado intermedio y **opcional** que indica que la factura ya fue revisada por una persona.
+
+<Info>
+Este estado es especialmente útil en **empresas medianas o grandes** donde existe un proceso de revisión en múltiples niveles. La persona que revisa la factura no tiene autorización para aprobarla directamente, pero puede pre-aprobarla para que otro usuario con más permisos realice la aprobación final.
+</Info>
+
+### Aprobada
+
+<Icon icon="circle-check" iconType="solid" /> Uno de los estados más importantes del sistema. Cuando una factura pasa a **Aprobada**, se activa automáticamente el **flujo de fecha de pago**.
+
+El sistema, basado en las reglas configuradas, calcula y asigna la fecha de pago correspondiente. Esta fecha es informativa y sirve para organizar el ciclo de pagos de la empresa.
+
+<Card
+  title="Configurar reglas de fecha de pago"
+  icon="calendar"
+  href="/facturas/fecha-pago"
+>
+  Aprende cómo funcionan las reglas que determinan la fecha de pago de las facturas aprobadas.
+</Card>
+
+### Rechazada
+
+<Icon icon="circle-xmark" iconType="solid" /> Indica que la factura fue rechazada. Al rechazar una factura, el sistema **requiere obligatoriamente** una descripción del motivo del rechazo.
+
+<Frame>
+  <img src="/images/facturas/reject.png" alt="Modal para rechazar una factura con razón de rechazo" />
+</Frame>
+
+<Note>
+El motivo del rechazo queda registrado en el historial de la factura para futuras referencias y auditorías.
+</Note>
+
+### Pagada
+
+<Icon icon="money-check-dollar" iconType="solid" /> Estado final que indica que la factura ya fue pagada. Marca el cierre del ciclo de vida de la factura.
+
+---
+
+## Cómo cambiar el estado
+
+Para cambiar el estado de una o más facturas:
+
+<Steps>
+  <Step title="Seleccionar facturas">
+    En el [listado de facturas](https://app.finpilot.ar/invoices), marca las casillas de las facturas cuyo estado deseas cambiar.
+  </Step>
+
+  <Step title="Abrir menú de acciones">
+    Una vez seleccionadas, aparecerá el botón **Acciones** en la esquina superior derecha indicando el número de facturas seleccionadas.
+  </Step>
+
+  <Step title="Elegir nuevo estado">
+    Haz clic en el botón y selecciona la acción correspondiente al estado que deseas asignar:
+    - Pre-aprobar seleccionadas
+    - Aprobar seleccionadas
+    - Rechazar seleccionadas
+    - Marcar como pagadas
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/facturas/change-status.png" alt="Menú de acciones para cambiar estado de facturas" />
+</Frame>
+
+<Tip>
+Puedes cambiar el estado de **múltiples facturas a la vez** seleccionándolas todas antes de elegir la acción. Esto es útil para procesar lotes de facturas de forma eficiente.
+</Tip>
+
+---
+
+## Resumen de estados
+
+| Estado | Descripción | Acción automática |
+|--------|-------------|-------------------|
+| **Pendiente** | Factura cargada, esperando revisión | - |
+| **Pre-aprobada** | Revisada, pendiente de aprobación final | - |
+| **Aprobada** | Aprobada para pago | Calcula fecha de pago |
+| **Rechazada** | No aprobada (requiere motivo) | - |
+| **Pagada** | Factura pagada | - |
