@@ -55,7 +55,8 @@
               "integraciones/gmail",
               "integraciones/outlook-hotmail"
             ]
-          }
+          },
+          "integraciones/tango"
         ]
       },
       {

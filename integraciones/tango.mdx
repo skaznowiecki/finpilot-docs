@@ -1,0 +1,286 @@
+---
+title: "Tango"
+icon: "building-columns"
+---
+
+**Tango** es uno de los sistemas de gestión contable más utilizados en Argentina, desarrollado por Axoft. Es un ERP (Enterprise Resource Planning) que permite a las empresas gestionar su contabilidad, facturación, stock, compras y ventas de forma integrada.
+
+FinPilot se integra con Tango mediante un sistema de **mapping (mapeo)** que traduce automáticamente los datos extraídos de las facturas a la estructura contable específica de cada empresa en Tango.
+
+<Card
+  title="Acceder a la integración con Tango"
+  icon="arrow-up-right-from-square"
+  href="https://app.finpilot.ar/integrations/tango"
+>
+  Configura y administra la integración con Tango.
+</Card>
+
+---
+
+## ¿Cómo funciona?
+
+<Steps>
+  <Step title="Extracción de datos con IA">
+    FinPilot extrae los datos de las facturas recibidas mediante IA: proveedor, monto, conceptos y alícuotas de IVA.
+  </Step>
+
+  <Step title="Mapping a la estructura de Tango">
+    El mapeo traduce la información extraída a la estructura específica de Tango:
+    - Asocia proveedores a sus códigos internos en Tango
+    - Asigna cuentas contables según el concepto de gasto
+    - Vincula centros de costo para imputación presupuestaria
+    - Clasifica correctamente las alícuotas de IVA según normativa AFIP
+  </Step>
+
+  <Step title="Exportación compatible">
+    La información se exporta en formato compatible con Tango, lista para importar directamente en el sistema contable.
+  </Step>
+</Steps>
+
+<Info>
+Esto elimina la carga manual de facturas en el sistema contable, reduciendo errores y acelerando el procesamiento.
+</Info>
+
+---
+
+## Activar la integración
+
+<Steps>
+  <Step title="Ir a la configuración de Tango">
+    Accede a [Integraciones > Tango](https://app.finpilot.ar/integrations/tango).
+  </Step>
+
+  <Step title="Activar">
+    Haz clic en el botón **Activar** para habilitar la integración.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="/images/tango/activar.png" alt="Pantalla para activar la integración con Tango, mostrando el botón Activar" />
+</Frame>
+
+Una vez activada la integración, se habilitarán **5 tabs de configuración** donde podrás realizar los mapeos necesarios.
+
+<Frame>
+  <img src="/images/tango/general.png" alt="Vista general de la integración Tango activada con las 5 pestañas de configuración" />
+</Frame>
+
+---
+
+## Configuración por organización
+
+Cada tab de configuración permite definir mapeos a nivel **General** (sin organización) o a nivel de una **organización específica**.
+
+<Info>
+Si tenés sub-organizaciones configuradas (ver [Organizaciones](/administracion/organizaciones)), podés crear una configuración específica para cada una. Cuando algún valor no se encuentra en la configuración de la organización, se utiliza como **fallback** la configuración general.
+</Info>
+
+---
+
+## Tabs de configuración
+
+<Tabs>
+  <Tab title="Configuración IVA">
+    ### Configuración de IVA
+
+    El sistema detecta automáticamente el **IVA**, **Percepciones** y **Retenciones** de cada factura. En este tab se configuran los códigos de cuentas contables de IVA que tenés en Tango para cada alícuota.
+
+    Las alícuotas disponibles para configurar son:
+
+    | Alícuota | Descripción |
+    |----------|-------------|
+    | **IVA 21%** | Alícuota general |
+    | **IVA 10.5%** | Alícuota diferencial reducida |
+    | **IVA 27%** | Alícuota diferencial incrementada |
+    | **IVA 5%** | Alícuota diferencial reducida |
+    | **IVA 2.5%** | Alícuota diferencial reducida |
+    | **Exento** | Operaciones exentas de IVA |
+    | **Percepciones** | Percepciones aplicadas |
+    | **Retenciones** | Retenciones aplicadas |
+
+    Para cada alícuota, ingresá el código de cuenta contable correspondiente en Tango (por ejemplo, `11.03.001` para IVA 21%).
+
+    Al exportar, la información de IVA se muestra con los códigos de Tango configurados:
+
+    <Frame>
+      <img src="/images/tango/export-iva.png" alt="Vista del archivo exportado mostrando las columnas de IVA con códigos de Tango" />
+    </Frame>
+  </Tab>
+
+  <Tab title="Artículos">
+    ### Configuración de Artículos
+
+    Un **artículo** en Tango es la unidad básica que representa un producto o servicio dentro del sistema. En este tab se realiza el mapeo de palabras clave a códigos de artículos de Tango.
+
+    Para agregar un artículo, completá los siguientes campos:
+
+    | Campo | Descripción | Ejemplo |
+    |-------|-------------|---------|
+    | **Palabra Clave** | Término que identifica el concepto | `honorarios` |
+    | **Código** | Código del artículo en Tango | `ART-004` |
+    | **Descripción** | Descripción detallada del artículo | `Honorarios profesionales` |
+
+    <Warning>
+    Es muy importante que la **descripción sea lo más representativa posible**, ya que permite al sistema identificar automáticamente el artículo correcto basándose en coincidencias con el contenido de la factura.
+    </Warning>
+
+    <Frame>
+      <img src="/images/tango/articulos.png" alt="Configuración de artículos mostrando el mapeo de palabras clave a códigos de Tango" />
+    </Frame>
+  </Tab>
+
+  <Tab title="Centros de Costo">
+    ### Configuración de Centros de Costo
+
+    Un **centro de costo** es una unidad organizacional o área de la empresa a la cual se asignan gastos e ingresos con el objetivo de controlar y analizar la rentabilidad de cada sector.
+
+    En Tango, los centros de costo permiten imputar cada gasto o ingreso a un área específica, generando reportes que muestran la performance económica de cada sector. Esto facilita la toma de decisiones y el control presupuestario.
+
+    Para agregar un centro de costo, completá:
+
+    | Campo | Descripción | Ejemplo |
+    |-------|-------------|---------|
+    | **Código** | Código interno del centro de costo en Tango | `ADM-001` |
+    | **Descripción** | Descripción detallada del centro de costo | `Administración` |
+
+    <Warning>
+    Es fundamental detallar bien la **descripción**, ya que es la información que el sistema utiliza para elegir automáticamente el centro de costo adecuado para cada factura.
+    </Warning>
+
+    <Frame>
+      <img src="/images/tango/centro-costos.png" alt="Configuración de centros de costo con códigos y descripciones" />
+    </Frame>
+  </Tab>
+
+  <Tab title="Cuentas Contables">
+    ### Configuración de Cuentas Contables
+
+    Una **cuenta contable** es una categoría del plan de cuentas que clasifica y registra los movimientos económicos de la empresa según su naturaleza contable. Cada cuenta tiene un código único (generalmente numérico) y representa un tipo específico de activo, pasivo, ingreso o gasto.
+
+    Las cuentas contables se organizan jerárquicamente:
+
+    | Nivel | Ejemplo |
+    |-------|---------|
+    | **Nivel 1** | Activo, Pasivo, Patrimonio Neto, Resultados |
+    | **Nivel 2** | Activo Corriente, Activo No Corriente |
+    | **Nivel 3** | Caja y Bancos, Créditos por Ventas |
+    | **Nivel 4+** | Mayor detalle según necesidad de la empresa |
+
+    Para agregar una cuenta contable, completá:
+
+    | Campo | Descripción | Ejemplo |
+    |-------|-------------|---------|
+    | **Código** | Código interno de la cuenta en Tango | `51.10.010` |
+    | **Descripción** | Descripción detallada de la cuenta | `Gastos de oficina` |
+
+    <Warning>
+    Al igual que con los centros de costo, la **descripción** se utiliza para que el sistema pueda asignar automáticamente la cuenta contable correcta a cada factura.
+    </Warning>
+
+    <Frame>
+      <img src="/images/tango/cuenta-contable.png" alt="Configuración de cuentas contables con códigos y descripciones" />
+    </Frame>
+  </Tab>
+
+  <Tab title="Proveedores">
+    ### Configuración de Proveedores
+
+    En este tab se visualizan todos los proveedores cargados en el sistema. A cada proveedor se le puede asignar:
+
+    | Campo | Descripción | Obligatorio |
+    |-------|-------------|-------------|
+    | **Código Tango** | Código interno del proveedor en Tango | Sí |
+    | **Cuenta Contable** | Cuenta contable por defecto para las facturas de este proveedor | No |
+    | **Centro de Costo** | Centro de costo por defecto para asignación presupuestaria | No |
+
+    <Tip>
+    Los campos de **Cuenta Contable** y **Centro de Costo** no son obligatorios, pero configurarlos ayuda a determinar valores por defecto para las facturas de ese proveedor, agilizando el procesamiento.
+    </Tip>
+
+    <Frame>
+      <img src="/images/tango/prooveedores.png" alt="Configuración de proveedores con código Tango, cuenta contable y centro de costo" />
+    </Frame>
+  </Tab>
+</Tabs>
+
+---
+
+## Datos de Tango en facturas
+
+Una vez activada la integración, se habilita un nuevo tab **Integraciones** en el detalle de cada factura. Este tab muestra los valores que se cargaron automáticamente durante el proceso de extracción de información:
+
+- **Código Proveedor Tango**: identificador del proveedor en Tango
+- **Código Artículo Principal**: código de artículo para clasificación en Tango
+- **Cuenta Contable Proveedor**: cuenta contable por defecto para las facturas de este proveedor
+- **Centro de Costo Proveedor**: centro de costo para asignación presupuestaria
+
+<Frame>
+  <img src="/images/tango/factura-integraciones.png" alt="Tab de Integraciones en el detalle de una factura mostrando los datos de Tango asignados" />
+</Frame>
+
+<Tip>
+Si necesitás modificar alguno de los valores asignados automáticamente, podés hacerlo directamente desde este tab y guardar los cambios.
+</Tip>
+
+---
+
+## Exportar con datos de Tango
+
+Al tener la integración de Tango habilitada, la funcionalidad de [exportación de facturas](/facturas/exportar) incluye campos adicionales específicos de Tango.
+
+Al exportar, podés seleccionar qué campos de Tango incluir en el archivo:
+
+- Cod. Proveedor Tango
+- Cuenta Contable Proveedor
+- Centro de Costo Proveedor
+- Cod. Artículo Principal
+- Resumen IVA
+- Hoja Items Tango (hoja separada)
+
+<Frame>
+  <img src="/images/tango/export-options.png" alt="Modal de exportación mostrando los campos de Datos Tango disponibles para incluir" />
+</Frame>
+
+El archivo Excel exportado incluirá las columnas de Tango seleccionadas junto con el resto de los datos de la factura:
+
+<Frame>
+  <img src="/images/tango/tango-export-xls.png" alt="Archivo Excel exportado mostrando columnas con datos de Tango" />
+</Frame>
+
+---
+
+## Referencias relacionadas
+
+<CardGroup cols={2}>
+  <Card
+    title="Organizaciones"
+    icon="sitemap"
+    href="/administracion/organizaciones"
+  >
+    Configura organizaciones para mapeos específicos por entidad.
+  </Card>
+
+  <Card
+    title="Exportar facturas"
+    icon="download"
+    href="/facturas/exportar"
+  >
+    Guía completa sobre cómo exportar facturas a Excel.
+  </Card>
+
+  <Card
+    title="Proveedores"
+    icon="building"
+    href="/proveedores/crear-editar"
+  >
+    Cómo crear y editar proveedores en el sistema.
+  </Card>
+
+  <Card
+    title="Importar facturas"
+    icon="upload"
+    href="/facturas/importar"
+  >
+    Otras formas de cargar facturas para su procesamiento.
+  </Card>
+</CardGroup>

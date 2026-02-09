@@ -3,10 +3,10 @@ title: "Exportar"
 icon: "download"
 ---
 
-FinPilot te permite exportar tus facturas a un archivo **XLSX (Excel)** con toda la información disponible. La exportación incluye todos los campos de la factura más todos los campos cargados del proveedor asociado.
+FinPilot te permite exportar tus facturas a un archivo **XLSX (Excel)** eligiendo exactamente qué información querés incluir. Antes de exportar, un modal te permite seleccionar los grupos de campos que necesitás en tu archivo.
 
 <Info>
-A medida que completes más información en tus proveedores (datos bancarios, contacto, etc.), estos campos adicionales se incluirán automáticamente en la exportación de facturas.
+A medida que completes más información en tus proveedores (datos bancarios, contacto, etc.), estos campos adicionales estarán disponibles para incluir en la exportación.
 </Info>
 
 <Card
@@ -39,6 +39,10 @@ Existen dos maneras de exportar facturas según tus necesidades:
       <Step title="Exportar">
         Haz clic en el botón y selecciona **Exportar seleccionadas** del menú desplegable.
       </Step>
+
+      <Step title="Seleccionar campos">
+        En el modal de exportación, elegí qué grupos de información querés incluir en el archivo y hacé clic en **Exportar**.
+      </Step>
     </Steps>
 
     <Frame>
@@ -63,6 +67,10 @@ Existen dos maneras de exportar facturas según tus necesidades:
       <Step title="Exportar">
         Una vez aplicados los filtros, haz clic en el botón **Exportar** ubicado en la esquina superior derecha.
       </Step>
+
+      <Step title="Seleccionar campos">
+        En el modal de exportación, elegí qué grupos de información querés incluir en el archivo y hacé clic en **Exportar**.
+      </Step>
     </Steps>
 
     <Frame>
@@ -75,9 +83,36 @@ Existen dos maneras de exportar facturas según tus necesidades:
   </Tab>
 </Tabs>
 
+---
+
+## Selección de campos a exportar
+
+Antes de generar el archivo, un modal te permite elegir qué grupos de información incluir en la exportación. Podés activar o desactivar cada grupo según lo que necesites:
+
+<Frame>
+  <img src="/images/facturas/exportar-modal.png" alt="Modal de selección de campos para exportar facturas" />
+</Frame>
+
+Los grupos de campos disponibles son:
+
+| Grupo | Descripción |
+|-------|-------------|
+| **Datos de Factura** | Número, tipo, fechas, montos, estado y etiquetas |
+| **Datos de Organización** | Información de la organización asociada a la factura |
+| **Datos de Proveedor** | Nombre, CUIT, información de contacto |
+| **Cuentas Bancarias** | Datos bancarios del proveedor |
+| **Etiquetas** | Etiquetas asignadas a la factura y al proveedor |
+| **Datos Tango** | Campos de la integración con Tango (solo si está activa) |
+
+<Info>
+El grupo **Datos Tango** solo aparece si tenés la [integración con Tango](/integraciones/tango) activada. Incluye campos como Código Proveedor Tango, Cuenta Contable, Centro de Costo, Artículo Principal y el desglose de IVA por alícuota. Consultá la [documentación de Tango](/integraciones/tango#exportar-con-datos-de-tango) para más detalles.
+</Info>
+
+---
+
 ## Contenido del archivo exportado
 
-El archivo XLSX incluye toda la información disponible:
+El archivo XLSX incluye la información según los campos seleccionados:
 
 <CardGroup cols={2}>
   <Card title="Datos de la factura" icon="file-invoice">
